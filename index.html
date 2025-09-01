@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Alpha</title>
+</head>
+
+<body>
+
+    <!--HEADER-->
+    <header>
+        <div class="header-topo" id="header-topo">
+            <div class="logo-topo" id="logo-topo">
+                <img src="img-web/js.png" alt="">
+            </div> <!--FIM LOGO-TOPO-->
+
+            <div class="menu-topo" id="menu-topo">
+                <nav class="menu-navegação">
+                    <ul>
+                        <li>
+                            <a href="">INÍCIO</a>
+                            <a href="">BENEFÍCIOS</a>
+                            <a href="">AVALIAÇÕES</a>
+                            <a href="">CONTATO</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div> <!--FIM MENU-TOPO-->
+
+            <div class="btn-contatos" id="btn-contatos">
+                <div class="card">
+                    <span>Social</span>
+                    <a class="social-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                            viewBox="0 0 50 50">
+                            <path
+                                d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="social-link" href="#">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 461.001 461.001"
+                            xml:space="preserve" fill="#000000">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <g>
+                                    <path style="fill:#F61C0D;"
+                                        d="M365.257,67.393H95.744C42.866,67.393,0,110.259,0,163.137v134.728 c0,52.878,42.866,95.744,95.744,95.744h269.513c52.878,0,95.744-42.866,95.744-95.744V163.137 C461.001,110.259,418.135,67.393,365.257,67.393z M300.506,237.056l-126.06,60.123c-3.359,1.602-7.239-0.847-7.239-4.568V168.607 c0-3.774,3.982-6.22,7.348-4.514l126.06,63.881C304.363,229.873,304.298,235.248,300.506,237.056z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    <a class="social-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                            viewBox="0 0 128 128">
+                            <path
+                                d="M 64 2 C 29.8 2 2 29.8 2 64 C 2 74.5 4.5992188 84.800391 9.6992188 93.900391 L 4.4003906 113.30078 C 3.5003906 116.40078 4.3992188 119.60039 6.6992188 121.90039 C 8.9992188 124.20039 12.200781 125.10078 15.300781 124.30078 L 35.5 119 C 44.3 123.6 54.099609 126 64.099609 126 C 98.299609 126 126.09961 98.2 126.09961 64 C 126.09961 47.4 119.7 31.899219 108 20.199219 C 96.2 8.4992187 80.6 2 64 2 z M 64 8 C 79 8 93.099609 13.800391 103.59961 24.400391 C 114.19961 35.000391 120.1 49.1 120 64 C 120 94.9 94.9 120 64 120 C 54.7 120 45.399219 117.59922 37.199219 113.19922 C 36.799219 112.99922 36.300781 112.80078 35.800781 112.80078 C 35.500781 112.80078 35.3 112.80039 35 112.90039 L 13.699219 118.5 C 12.199219 118.9 11.200781 118.09922 10.800781 117.69922 C 10.400781 117.29922 9.6 116.30078 10 114.80078 L 15.599609 94.199219 C 15.799609 93.399219 15.700781 92.600391 15.300781 91.900391 C 10.500781 83.500391 8 73.8 8 64 C 8 33.1 33.1 8 64 8 z M 64 17 C 38.1 17 17 38 17 64 C 17 72.3 19.200781 80.4 23.300781 87.5 C 24.900781 90.3 25.3 93.599219 24.5 96.699219 L 21.599609 107.19922 L 32.800781 104.30078 C 33.800781 104.00078 34.800781 103.90039 35.800781 103.90039 C 37.800781 103.90039 39.8 104.40039 41.5 105.40039 C 48.4 109.00039 56.1 111 64 111 C 89.9 111 111 89.9 111 64 C 111 51.4 106.09922 39.599219 97.199219 30.699219 C 88.399219 21.899219 76.6 17 64 17 z M 43.099609 36.699219 L 45.900391 36.699219 C 47.000391 36.699219 48.099219 36.799219 49.199219 39.199219 C 50.499219 42.099219 53.399219 49.399609 53.699219 50.099609 C 54.099219 50.799609 54.300781 51.699219 53.800781 52.699219 C 53.300781 53.699219 53.100781 54.299219 52.300781 55.199219 C 51.600781 56.099219 50.699609 57.100781 50.099609 57.800781 C 49.399609 58.500781 48.6 59.300781 49.5 60.800781 C 50.4 62.300781 53.299219 67.1 57.699219 71 C 63.299219 76 68.099609 77.600781 69.599609 78.300781 C 71.099609 79.000781 71.900781 78.900391 72.800781 77.900391 C 73.700781 76.900391 76.5 73.599609 77.5 72.099609 C 78.5 70.599609 79.500781 70.900391 80.800781 71.400391 C 82.200781 71.900391 89.400391 75.499219 90.900391 76.199219 C 92.400391 76.899219 93.399219 77.300391 93.699219 77.900391 C 94.099219 78.700391 94.100391 81.599609 92.900391 85.099609 C 91.700391 88.499609 85.700391 91.899609 82.900391 92.099609 C 80.200391 92.299609 77.699219 93.300391 65.199219 88.400391 C 50.199219 82.500391 40.7 67.099609 40 66.099609 C 39.3 65.099609 34 58.100781 34 50.800781 C 34 43.500781 37.799219 40 39.199219 38.5 C 40.599219 37 42.099609 36.699219 43.099609 36.699219 z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="social-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                            viewBox="0 0 64 64">
+                            <radialGradient id="TGwjmZMm2W~B4yrgup6jda_119026_gr1" cx="32" cy="32.5" r="31.259"
+                                gradientTransform="matrix(1 0 0 -1 0 64)" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#efdcb1"></stop>
+                                <stop offset="0" stop-color="#f2e0bb"></stop>
+                                <stop offset=".011" stop-color="#f2e0bc"></stop>
+                                <stop offset=".362" stop-color="#f9edd2"></stop>
+                                <stop offset=".699" stop-color="#fef4df"></stop>
+                                <stop offset="1" stop-color="#fff7e4"></stop>
+                            </radialGradient>
+                            <path fill="url(#TGwjmZMm2W~B4yrgup6jda_119026_gr1)"
+                                d="M58,54c-1.1,0-2-0.9-2-2s0.9-2,2-2h2.5c1.9,0,3.5-1.6,3.5-3.5S62.4,43,60.5,43H50c-1.4,0-2.5-1.1-2.5-2.5	S48.6,38,50,38h8c1.7,0,3-1.3,3-3s-1.3-3-3-3H42v-6h18c2.3,0,4.2-2,4-4.4c-0.2-2.1-2.1-3.6-4.2-3.6H58c-1.1,0-2-0.9-2-2s0.9-2,2-2	h0.4c1.3,0,2.5-0.9,2.6-2.2c0.2-1.5-1-2.8-2.5-2.8h-14C43.7,9,43,8.3,43,7.5S43.7,6,44.5,6h3.9c1.3,0,2.5-0.9,2.6-2.2	C51.1,2.3,50,1,48.5,1H15.6c-1.3,0-2.5,0.9-2.6,2.2C12.9,4.7,14,6,15.5,6H19c1.1,0,2,0.9,2,2s-0.9,2-2,2H6.2c-2.1,0-4,1.5-4.2,3.6	C1.8,16,3.7,18,6,18h2.5c1.9,0,3.5,1.6,3.5,3.5S10.4,25,8.5,25H5.2c-2.1,0-4,1.5-4.2,3.6C0.8,31,2.7,33,5,33h17v11H6	c-1.7,0-3,1.3-3,3s1.3,3,3,3l0,0c1.1,0,2,0.9,2,2s-0.9,2-2,2H4.2c-2.1,0-4,1.5-4.2,3.6C-0.2,60,1.7,62,4,62h53.8	c2.1,0,4-1.5,4.2-3.6C62.2,56,60.3,54,58,54z">
+                            </path>
+                            <radialGradient id="TGwjmZMm2W~B4yrgup6jdb_119026_gr2" cx="18.51" cy="66.293" r="69.648"
+                                gradientTransform="matrix(.6435 -.7654 .5056 .4251 -26.92 52.282)"
+                                gradientUnits="userSpaceOnUse">
+                                <stop offset=".073" stop-color="#eacc7b"></stop>
+                                <stop offset=".184" stop-color="#ecaa59"></stop>
+                                <stop offset=".307" stop-color="#ef802e"></stop>
+                                <stop offset=".358" stop-color="#ef6d3a"></stop>
+                                <stop offset=".46" stop-color="#f04b50"></stop>
+                                <stop offset=".516" stop-color="#f03e58"></stop>
+                                <stop offset=".689" stop-color="#db359e"></stop>
+                                <stop offset=".724" stop-color="#ce37a4"></stop>
+                                <stop offset=".789" stop-color="#ac3cb4"></stop>
+                                <stop offset=".877" stop-color="#7544cf"></stop>
+                                <stop offset=".98" stop-color="#2b4ff2"></stop>
+                            </radialGradient>
+                            <path fill="url(#TGwjmZMm2W~B4yrgup6jdb_119026_gr2)"
+                                d="M45,57H19c-5.5,0-10-4.5-10-10V21c0-5.5,4.5-10,10-10h26c5.5,0,10,4.5,10,10v26C55,52.5,50.5,57,45,57z">
+                            </path>
+                            <path fill="#fff"
+                                d="M32,20c4.6,0,5.1,0,6.9,0.1c1.7,0.1,2.6,0.4,3.2,0.6c0.8,0.3,1.4,0.7,2,1.3c0.6,0.6,1,1.2,1.3,2 c0.2,0.6,0.5,1.5,0.6,3.2C46,28.9,46,29.4,46,34s0,5.1-0.1,6.9c-0.1,1.7-0.4,2.6-0.6,3.2c-0.3,0.8-0.7,1.4-1.3,2 c-0.6,0.6-1.2,1-2,1.3c-0.6,0.2-1.5,0.5-3.2,0.6C37.1,48,36.6,48,32,48s-5.1,0-6.9-0.1c-1.7-0.1-2.6-0.4-3.2-0.6 c-0.8-0.3-1.4-0.7-2-1.3c-0.6-0.6-1-1.2-1.3-2c-0.2-0.6-0.5-1.5-0.6-3.2C18,39.1,18,38.6,18,34s0-5.1,0.1-6.9 c0.1-1.7,0.4-2.6,0.6-3.2c0.3-0.8,0.7-1.4,1.3-2c0.6-0.6,1.2-1,2-1.3c0.6-0.2,1.5-0.5,3.2-0.6C26.9,20,27.4,20,32,20 M32,17 c-4.6,0-5.2,0-7,0.1c-1.8,0.1-3,0.4-4.1,0.8c-1.1,0.4-2.1,1-3,2s-1.5,1.9-2,3c-0.4,1.1-0.7,2.3-0.8,4.1C15,28.8,15,29.4,15,34 s0,5.2,0.1,7c0.1,1.8,0.4,3,0.8,4.1c0.4,1.1,1,2.1,2,3c0.9,0.9,1.9,1.5,3,2c1.1,0.4,2.3,0.7,4.1,0.8c1.8,0.1,2.4,0.1,7,0.1 s5.2,0,7-0.1c1.8-0.1,3-0.4,4.1-0.8c1.1-0.4,2.1-1,3-2c0.9-0.9,1.5-1.9,2-3c0.4-1.1,0.7-2.3,0.8-4.1c0.1-1.8,0.1-2.4,0.1-7 s0-5.2-0.1-7c-0.1-1.8-0.4-3-0.8-4.1c-0.4-1.1-1-2.1-2-3s-1.9-1.5-3-2c-1.1-0.4-2.3-0.7-4.1-0.8C37.2,17,36.6,17,32,17L32,17z">
+                            </path>
+                            <path fill="#fff"
+                                d="M32,25c-5,0-9,4-9,9s4,9,9,9s9-4,9-9S37,25,32,25z M32,40c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6S35.3,40,32,40 z">
+                            </path>
+                            <circle cx="41" cy="25" r="2" fill="#fff"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div><!--FIM BTN-CONTATO-->
+        </div><!--FIM HEADER-TOPO-->
+    </header>
+
+    <section>
+        <div class="secao-1" id="secao-1">
+            <div class="img-secao" id="img-secao">
+                <div class="txt-topo" id="txt-topo">
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, molestias nobis numquam mollitia
+                        non</h1>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consequatur excepturi dicta
+                        alias, consectetur magni cumque laborum at quas nostrum repudiandae sunt. Autem aliquam debitis
+                        dolore veritatis amet quisquam soluta.</h2>
+                    <p>Quer descobrir os 3 melhores exercicios para cada musculo?</p>
+                    <div class="btn-secao-1" id="btn-secao">
+                        <button onclick="openModal()" class="animated-button">
+                            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                            <span class="text">Modern Button</span>
+                            <span class="circle"></span>
+                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                        </button>
+                        <div id="modal-container" class="modal-container">
+                            <div class="modal">
+                                <button class="fechar" id="fechar">X</button>
+                                <div class="formulario">
+                                    <H1>Preencha o formulario</H1>
+                                    <h2></h2>
+                                    <form action="" method="post">
+                                        <input type="text" placeholder="Digite seu nome completo">
+                                        <input type="number" placeholder="11-99999-9999">
+                                        <input type="email" placeholder="Seu melhor e-mail">
+                                        <textarea name="mansagem" id="mensagem"></textarea>
+                                        <button class="btn-ctt">Enviar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="animated-button">
+                            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                            <span class="text">Modern Button</span>
+                            <span class="circle"></span>
+                            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div><!--FIM BTN-->
+                </div><!--FIM TXT-TOPO-->
+                <div class="img-pessoal" id="img-pessoal">
+                    <img src="img-web/sua-foto.png" alt="">
+                </div>
+
+            </div><!--FIM IMG-SECAO-->
+
+        </div><!--FIM SECTION-->
+    </section><!--FIM DA SECTION-->
+    <section>
+        <div class="secao-2" id="secao-2">
+            <div class="txt-beneficios" id="txt-beneficios">
+                <h1>Beneficios</h1>
+                <p> Os melhores Beneficios de ter uma personal !</p>
+            </div>
+            <div class="container-s2" id="container-s2">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">1. Treinos personalizados</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">1. Cada pessoa tem objetivos diferentes. O personal adapta os exercícios
+                                para o seu corpo e meta.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">2. Mais resultados em menos tempo</p>
+                            <p></p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">2. Sem perder tempo em treinos aleatórios, você segue um plano eficiente.
+                            </p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">3. Correção da postura</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">3. Evita erros de execução que podem causar lesões e limitações.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">4. Motivação constante</p>
+                            <p></p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">4. O personal acompanha e incentiva, tornando o treino mais leve e
+                                prazeroso.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">5. Segurança nos exercícios</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">5.. Orientação correta para usar cargas, máquinas e técnicas sem riscos.
+                            </p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">6. Variedade de treinos</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">6. Nada de rotina chata. O personal traz novas ideias e desafios.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">7. Compromisso e disciplina</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">7. Saber que alguém está acompanhando faz você não faltar e manter
+                                constância.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title">8. Apoio em nutrição e estilo de vida</p>
+                            <p>Hover Me</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <p class="title">8. Muitos personals orientam em hábitos saudáveis que complementam os
+                                treinos.</p>
+                            <p>Leave Me</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--FIM CONTAINER-S2-->
+        </div><!--FIM SECAO-2-->
+    </section>
+    <section>
+        <div class="secao-3" id="secao-3">
+            <div class="dicas-muscle" id="dicas-muscle">
+                <h1>Você sabe os 3 melhores exercicios para cada musculo?</h1>
+                <h2>Veja agora mesmo com a personal!</h2>
+
+                <!-- Seleção de grupo muscular -->
+                <label>
+                    Escolha um grupo muscular:
+                    <select id="muscle">
+                        <!-- Cada opção tem o valor que corresponde a uma chave do objeto exercises -->
+                        <option value="chest">Peito</option>
+                        <option value="back">Costas</option>
+                        <option value="biceps">Bíceps</option>
+                        <option value="triceps">Tríceps</option>
+                        <option value="legs">Pernas</option>
+                        <option value="shoulders">Ombros</option>
+                        <option value="abs">Abdômen</option>
+                    </select>
+                </label>
+                <button id="load">Carregar</button>
+
+                <!-- Container onde os exercícios serão exibidos -->
+                <div id="list" class="grid"></div>
+            </div><!--FIM DICAS-->
+            <div class="secao-imc">
+                <h1>Saiba em segundos como está <span>sua saúde com o IMC!</span> </h1>
+                <div class="container-imc">
+                    <div class="title"> Calculadora - IMC </div>
+                    <div class="input">
+                        <label>Nome:</label>
+                        <input type="text" id='nome' placeholder="Nome" autocomplete="none">
+                    </div>
+                    <div class="input">
+                        <label>Altura:</label>
+                        <input type="number" id='altura' placeholder="Ex:1,80">
+                    </div>
+                    <div class="input">
+                        <label>Peso:</label>
+                        <input type="number" id='peso' placeholder='Peso'>
+                    </div>
+                    <button id='calcular'>Calcular</button>
+
+                    <div class="result" id='resultado'></div>
+                </div>
+            </div>
+        </div><!--FIM SECAO-3-->
+    </section>
+    <section>
+        <div class="secao-4" id="secao-4">
+            <h1>Consultoria</h1>
+            <h2>Tenha acesso a consultoria para facilitar sua jornada</h2>
+            <div class="container">
+                <div class="box">
+                    <span class="title">GLASS EFFECT</span>
+                    <div class="box-consultoria">
+                        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam minus totam
+                            praesentium porro fugiat cum assumenda accusantium ipsa cumque animi sed itaque aut suscipit
+                            reiciendis laborum nihil libero, deserunt provident?<p>Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Voluptate, minus doloremque molestiae maxime blanditiis
+                                voluptates voluptas quae magnam officiis assumenda exercitationem cupiditate ab repellat
+                                ipsam nesciunt velit consequuntur dolorum praesentium.</p></strong>
+                        <img src="img-web/prt-foto-1-1024x682.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <span class="title">GLASS EFFECT</span>
+                    <div>
+                        <div class="box-consultoria">
+                            <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam minus totam
+                                praesentium porro fugiat cum assumenda accusantium ipsa cumque animi sed itaque aut
+                                suscipit
+                                reiciendis laborum nihil libero, deserunt provident?<p>Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit. Voluptate, minus doloremque molestiae maxime
+                                    blanditiis
+                                    voluptates voluptas quae magnam officiis assumenda exercitationem cupiditate ab
+                                    repellat
+                                    ipsam nesciunt velit consequuntur dolorum praesentium.</p></strong>
+                            <img src="img-web/prt-foto-2-1024x682.webp" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <span class="title">GLASS EFFECT</span>
+                    <div class="box-consultoria">
+                        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam minus totam
+                            praesentium porro fugiat cum assumenda accusantium ipsa cumque animi sed itaque aut suscipit
+                            reiciendis laborum nihil libero, deserunt provident?<p>Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Voluptate, minus doloremque molestiae maxime blanditiis
+                                voluptates voluptas quae magnam officiis assumenda exercitationem cupiditate ab repellat
+                                ipsam nesciunt velit consequuntur dolorum praesentium.</p></strong>
+                        <img src="img-web/prt-foto-3-1024x682.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <span class="title">GLASS EFFECT</span>
+                    <div class="box-consultoria">
+                        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam minus totam
+                            praesentium porro fugiat cum assumenda accusantium ipsa cumque animi sed itaque aut suscipit
+                            reiciendis laborum nihil libero, deserunt provident?<p>Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Voluptate, minus doloremque molestiae maxime blanditiis
+                                voluptates voluptas quae magnam officiis assumenda exercitationem cupiditate ab repellat
+                                ipsam nesciunt velit consequuntur dolorum praesentium.</p></strong>
+                        <img src="img-web/prt-foto-4-1024x682.webp" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <span class="title">GLASS EFFECT</span>
+                    <div class="box-consultoria">
+                        <strong>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam minus totam
+                            praesentium porro fugiat cum assumenda accusantium ipsa cumque animi sed itaque aut suscipit
+                            reiciendis laborum nihil libero, deserunt provident?<p>Lorem ipsum dolor sit amet
+                                consectetur adipisicing elit. Voluptate, minus doloremque molestiae maxime blanditiis
+                                voluptates voluptas quae magnam officiis assumenda exercitationem cupiditate ab repellat
+                                ipsam nesciunt velit consequuntur dolorum praesentium.</p></strong>
+                        <img src="img-web/prt-foto-5-1024x682.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div><!--FIM SECAO-4-->
+    </section>
+    <section>
+        <div class="secao-5" id="secao-5">
+            <div class="m2">
+                <div class="logo">
+                    <h1>Quer ter grandes resultados?<br><span>Então esteja com os melhores!</span></h1>
+                    <div class="content-complete">
+                        <div class="card-content">
+                            <div class="card-list">
+                                <ul>
+                                    <h2>Outras consultorias online!</h2>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Atendimento limitado apenas durante o treino</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Treinos básicos e muitas vezes iguais para todos</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Foco apenas no exercício físico</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Resultados lentos por falta de ajustes constantes</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Usa planilhas simples ou treinos no papel</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Corrige execução somente quando percebe</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Motivação restrita ao momento do treino</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Horários fixos e pouco flexíveis</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 48 48">
+                                            <path fill="#f44336"
+                                                d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M29.656,15.516l2.828,2.828l-14.14,14.14l-2.828-2.828L29.656,15.516z">
+                                            </path>
+                                            <path fill="#fff"
+                                                d="M32.484,29.656l-2.828,2.828l-14.14-14.14l2.828-2.828L32.484,29.656z">
+                                            </path>
+                                        </svg>Foco só no corpo, não no estilo de vida</li>
+
+                                </ul>
+                            </div><!--FIM CARD-LIST-->
+
+                            <hr class="linha">
+                        </div><!--FIM CARD-CONTENT-->
+
+                        <div class="card-content-2">
+                            <div class="card-list-2">
+                                <ul>
+                                    <h2>Nossa consultoria com a personal!</h2>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Suporte contínuo (WhatsApp, vídeo, dúvidas a qualquer hora)</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Treinamentos 100% personalizados e exclusivos</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Integra treino + alimentação + estilo de vida</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Resultados acelerados com ajustes semanais/mensais</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Uso de aplicativos, relatórios e tecnologia de acompanhamento</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Atenção total em cada detalhe do movimento e evolução</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Constante incentivo e acompanhamento de metas</li>
+                                    <li><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+                                            viewBox="0 0 120 120">
+                                            <circle cx="60" cy="64" r="48" opacity=".35"></circle>
+                                            <circle cx="60" cy="60" r="48" fill="#44bf00"></circle>
+                                            <polygon
+                                                points="53.303,89 26.139,61.838 33.582,54.395 53.303,74.116 86.418,41 93.861,48.443"
+                                                opacity=".35"></polygon>
+                                            <polygon fill="#fff"
+                                                points="53.303,84 26.139,56.838 33.582,49.395 53.303,69.116 86.418,36 93.861,43.443">
+                                            </polygon>
+                                        </svg>Agenda flexível (presencial ou online)</li>
+                                </ul>
+                            </div><!--FIM CARD-LIST-2-->
+                        </div><!--FIM CARD-CONTENT-2-->
+
+                    </div><!--FIM CONTENT-COMPLETE-2-->
+
+                </div><!--FIM LOGO-->
+
+
+            </div><!--FIM M2-->
+
+        </div><!--FIM SECAO-5-->
+
+        <div class="btn-consul">
+            <a href="" target="_blank"><button class="button-consul">
+                    <p>Fazer Consultoria</p>
+                </button></a>
+        </div>
+    </section>
+</body>
+<script src="muscle.js"></script>
+<script src="imc.js"></script>
+<script src="modal.js"></script>
+
+</html>
