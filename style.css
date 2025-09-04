@@ -71,19 +71,22 @@ body {
   padding: 20PX;
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid;
   border-radius: 15px;
   padding: 10px 10px;
-  background: rgba(58, 219, 237, 0.2);
-  backdrop-filter: blur(12px);
-  /* desfoca o que está atrás */
-  -webkit-backdrop-filter: blur(12px);
   transition: all .5s;
+  background: linear-gradient(to bottom,
+      var(--color-esmerald) 0%,
+      transparent 20%);
+  color: #ffffff;
 }
 
 .menu-navegação ul li a:hover {
-  color: var(--color-esmerald);
-  box-shadow: 0px 0px 55px rgba(0, 255, 229, 0.44);
+  color: var(--color-black);
+  /*box-shadow: 0px 0px 50px rgba(0, 255, 229, 0.44);*/
+  background: rgba(58, 237, 195, 0.765);
+  backdrop-filter: blur(12px);
+  /* desfoca o que está atrás */
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-contatos {
@@ -272,16 +275,24 @@ body {
 .txt-topo {
   position: relative;
   margin: 0;
-  width: 480px;
+  width: 500px;
 }
 
 .txt-topo h1 {
   font-family: var(--font-grande);
   font-size: 30px;
+  font-weight: 600;
 }
 
 .txt-topo h2 {
   color: var(--color-esmerald);
+  font-family: var(--font-pequena);
+  font-weight: 600;
+}
+
+.txt-topo p{
+  font-weight: 600;
+  font-family: var(--font-pequena);
 }
 
 .img-pessoal img {
@@ -486,7 +497,7 @@ body {
   gap: 1rem;
 }
 
-input,
+.formulario input,
 textarea {
   width: 50%;
   height: 25%;
@@ -785,8 +796,20 @@ button {
     radial-gradient(circle at 10% 90%, rgba(0, 255, 255, 0.057), transparent 20%),
     radial-gradient(circle at 70% 80%, rgba(0, 255, 255, 0.057), transparent 25%),
     radial-gradient(circle at top left, #180032, #000000 0%);
+      opacity: 0;
+  /* Elemento começa invisível (transparente) */
+  transform: translateY(20%);
+  /* Desloca o elemento completamente para a esquerda, fora da tela */
+  filter: blur(15px);
+  /* Aplica um desfoque inicial de 15px, dando efeito de "fora de foco" */
+  transition: all 2s ease;
+  /* Anima todas as propriedades acima em 2 segundos com transição suave */
 }
-
+.visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
 .secao-4 h1 {
   text-align: center;
   padding-top: 90px;
@@ -801,7 +824,7 @@ button {
   color: var(--color-esmerald);
 }
 
-.container {
+.container-consul {
   color: white;
   position: relative;
   font-family: sans-serif;
@@ -809,8 +832,8 @@ button {
   padding: 60px;
 }
 
-.container .box {
-  width: 110.875em;
+.container-consul .box {
+  width: 90.875em;
   height: 31.875em;
   padding: 1rem;
   background-color: #77a8a811;
@@ -821,33 +844,33 @@ button {
   transition: all ease 0.3s;
 }
 
-.container .box {
+.container-consul .box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.container .box .title {
+.container-consul .box .title {
   font-size: 2rem;
   font-weight: 500;
   letter-spacing: 0.1em;
 }
 
-.container .box div strong {
+.container-consul .box div h3 {
   display: block;
   margin-bottom: 0.5rem;
   width: 500px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-.container .box div p {
+.container-consul .box div p {
   margin: 0;
   font-size: 1rem;
   font-weight: 300;
   letter-spacing: 0.1em;
 }
 
-.container .box:hover {
+.container-consul .box:hover {
   box-shadow: 0px 0px 20px 1px #ffbb763f;
   border: 1px solid var(--color-esmerald);
 }
@@ -867,6 +890,7 @@ button {
 
 }
 
+/*SECAO-5 - CONSULTORIA*/
 .secao-5 {
   justify-content: center;
   display: flex;
@@ -899,52 +923,48 @@ button {
   font-family: var(--font-pequena);
 }
 
-.card-content {
-  display: flex;
-  text-align: center;
-}
-
 .card-list {
   max-width: 350px;
   margin: 0 0 0 40px;
 
 }
 
-.card-list svg {
-  position: relative;
-  display: flex;
-  max-width: 25px;
-  bottom: 10px;
-}
-
 .card-content ul li {
-  font-size: 1.2rem;
-  padding: 1px 1px;
+  font-size: 1rem;
+  padding: 4px 20px;
   line-height: 1.6;
   list-style-type: none;
   display: flex;
   gap: 20px;
+  align-items: center;
+  /*alinha texto com svg*/
 }
 
-.card-content-2 ul li {
-  font-size: 1.2rem;
-  padding: 8px 1px;
-  line-height: 1.6;
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-.card-list-2 svg {
-  display: flex;
+.card-list svg {
   max-width: 30px;
 }
 
-.linha {
-  position: relative;
-  left: 30px;
-  max-height: 85%;
-  margin: 50px 0 50px 0;
+.card-content h2 {
+  background-image: linear-gradient(red);
+  -webkit-background-clip: text;
+
+}
+
+.card-content-2 ul li {
+  font-size: 1rem;
+  padding: 8px 15px;
+  line-height: 1.6;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  /*alinha texto com svg*/
+}
+
+.card-list-2 svg {
+
+  max-width: 30px;
+
 }
 
 
@@ -953,6 +973,10 @@ button {
   max-width: 350px;
 }
 
+.card-content-2 h2 {
+  background-image: linear-gradient(rgb(5, 218, 5));
+  -webkit-background-clip: text;
+}
 
 .m2 {
   position: relative;
@@ -1013,10 +1037,10 @@ button {
      - canto inferior direito → bege claro (#f8ffe5) até transparente
      O resultado é um "glow" colorido multicolorido nos cantos.
   */
-  background: radial-gradient(circle at 0 0, hsl(184, 93%, 60%), transparent),
-    radial-gradient(circle at 100% 0, #06d6a0, transparent),
-    radial-gradient(circle at 0 100%, #77a8a8, transparent),
-    radial-gradient(circle at 100% 100%, #f8ffe5, transparent);
+  background: radial-gradient(circle at 0 0, hsla(184, 93%, 60%, 0.134), transparent),
+    radial-gradient(circle at 100% 0, #06d69e39, transparent),
+    radial-gradient(circle at 0 100%, #77a8a835, transparent),
+    radial-gradient(circle at 100% 100%, #f8ffe530, transparent);
 }
 
 
@@ -1062,6 +1086,7 @@ button {
 }
 
 .btn-consul {
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -1074,7 +1099,7 @@ button {
   font-size: 20px;
   font-weight: 600;
   font-family: var(--font-grande);
-  margin-top: -10px;
+  margin-top: -13px;
   color: var(--color-black);
 }
 

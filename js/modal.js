@@ -27,3 +27,4 @@ campos.forEach(campo => {
         campo.style.border = "1px solid #ccc"; // volta ao normal
     });
 });
+
