@@ -552,8 +552,7 @@ textarea {
 
 .secao-2 {
   text-align: center;
-
-  padding-bottom: 90px;
+  padding-bottom: 400px;
 }
 
 .container-s2 {
@@ -574,7 +573,6 @@ textarea {
 }
 
 .txt-beneficios p {
-  padding-bottom: 40px;
   font-size: 2rem;
   color: var(--color-esmerald);
   text-transform: uppercase;
@@ -582,77 +580,99 @@ textarea {
   font-weight: 600;
 }
 
-.container-s2 p {
-  font-size: 1.5rem;
-  font-family: var(--font-pequena);
+.pilares {
+  padding: 7rem;
 }
 
-.flip-card {
-  background-color: transparent;
-  width: 290px;
-  height: 354px;
-  perspective: 1000px;
-  font-family: sans-serif;
-  padding: 10px;
+.pilares h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-.title {
-  font-size: 1.5em;
-  font-weight: 900;
-  text-align: center;
-  margin: 0;
-  text-transform: uppercase;
-  color: var(--color-white);
-}
-
-.flip-card-inner {
+.circle-container {
   position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+  width: 300px;
+  height: 300px;
+  margin: auto;
 }
 
-/* quando o card estiver “virado” */
-.flip-card-inner.flipped {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
-  position: absolute;
+.central-circle {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var());
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  border: 1px solid var(--color-esmerald);
-  border-radius: 1rem;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 0 25px #00d0ff, 0 0 50px #00ff808d;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -15%);
 }
 
-.flip-card-back p {
-  font-size: 18px;
-  color: var(--color-light-yellow);
+.central-circle::after {
+  content: '';
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--color-esmerald));
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  box-shadow: 0 0 25px #00d0ff, 0 0 50px #00ff80fc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.flip-card-front {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.595), rgba(0, 0, 0, 0.585)), url(img-web/mulher-de-tiro-medio-treinando-com-barra-no-ginasio-1-scaled.jpg);
-  /*background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-      rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);*/
-  background-size: cover;
-  color: coral;
+/* Bolinhas dos números em volta */
+.pillar {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--color-destaque1);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 0 15px #00ff80;
 }
 
-.flip-card-back {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.595), rgba(0, 0, 0, 0.585)), url(img-web/smart_1.jpg);
-  background-size: cover;
-  color: white;
-  transform: rotateY(180deg);
+/* Posicionamento circular */
+.pillar1 {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.pillar2 {
+  top: 100%;
+  right: -55%;
+  transform: translate(50%, -40%);
+}
+
+.pillar3 {
+  bottom: -100%;
+  left: 55%;
+  transform: translate(-50%, 100%);
+}
+
+.pillar4 {
+  top: 100%;
+  left: -55%;
+  transform: translate(-50%, -50%);
+}
+
 
 /*SECAO-3 - DICAS*/
 .secao-3 {
