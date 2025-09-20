@@ -10,7 +10,7 @@ const myObserver = new IntersectionObserver((entries) => {
     })
 });
 
-const elementos = document.querySelectorAll(".secao-imc, .dicas-muscle, .secao-4");
+const elementos = document.querySelectorAll(".secao-imc, .dicas-muscle, .secao-4, .secao-5");
 
 elementos.forEach((Element) => myObserver.observe(Element))
 
