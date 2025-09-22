@@ -46,7 +46,7 @@ body {
 /*background fundo*/
 .back-bottom {
   background: radial-gradient(circle at 20% 30%, rgba(0, 255, 255, 0.057), transparent 20%),
-    radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.057), transparent 15%),
+    radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.057), transparent 15%),
     radial-gradient(circle at 50% 70%, rgba(0, 255, 255, 0.057), transparent 30%),
     radial-gradient(circle at 80% 50%, rgba(0, 255, 255, 0.057), transparent 30%),
     radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.057), transparent 30%),
@@ -686,6 +686,150 @@ textarea {
   position: absolute;
 }
 
+.linha-bene1 {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  transform: translateX(-50%)rotate(45deg);
+
+  width: 500px;
+  /* largura do arco */
+  height: 350px;
+  /* altura do arco */
+
+  border: 2px solid var(--color-esmerald);
+  border-color: var(--color-esmerald) transparent transparent transparent;
+  /* só a parte de cima */
+  border-radius: 100% / 100%;
+  /* deixa em curva */
+}
+
+/* seta na ponta */
+.linha-bene1::after {
+  content: "";
+  position: absolute;
+  top: 54px;
+  /* posição da seta */
+  left: 88%;
+  transform: translateX(-50%) rotate(-50deg);
+  /* gira a setinha */
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--color-esmerald);
+  /* cor da seta */
+}
+
+.linha-bene2 {
+  position: absolute;
+  top: 10%;
+  left: -90%;
+  transform: translateX(-50%)rotate(130deg);
+
+  width: 500px;
+  /* largura do arco */
+  height: 400px;
+  /* altura do arco */
+
+  border: 2px solid var(--color-esmerald);
+  border-color: var(--color-esmerald) transparent transparent transparent;
+  /* só a parte de cima */
+  border-radius: 100% / 100%;
+  /* deixa em curva */
+}
+
+/* seta na ponta */
+.linha-bene2::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  /* posição da seta */
+  left: 87%;
+  transform: translateX(-50%) rotate(-40deg);
+  /* gira a setinha */
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--color-esmerald);
+  /* cor da seta */
+}
+
+.linha-bene3 {
+  position: absolute;
+  top: -35%;
+  left: 100%;
+  transform: translateX(1%)rotate(317deg);
+
+  width: 480px;
+  /* largura do arco */
+  height: 320px;
+  /* altura do arco */
+
+  border: 2px solid var(--color-esmerald);
+  border-color: var(--color-esmerald) transparent transparent transparent;
+  /* só a parte de cima */
+  border-radius: 100% / 100%;
+  /* deixa em curva */
+}
+
+/* seta na ponta */
+.linha-bene3::after {
+  content: "";
+  position: absolute;
+  top: 53px;
+  /* posição da seta */
+  left: 89%;
+  transform: translateX(-50%) rotate(-40deg);
+  /* gira a setinha */
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--color-esmerald);
+  /* cor da seta */
+}
+
+.linha-bene4 {
+  position: absolute;
+  bottom: 75%;
+  left: 85%;
+  transform: translateX(-50%)rotate(227deg);
+
+  width: 550px;
+  /* largura do arco */
+  height: 380px;
+  /* altura do arco */
+
+  border: 2px solid var(--color-esmerald);
+  border-color: var(--color-esmerald) transparent transparent transparent;
+  /* só a parte de cima */
+  border-radius: 100% / 100%;
+  /* deixa em curva */
+}
+
+/* seta na ponta */
+.linha-bene4::after {
+  content: "";
+  position: absolute;
+  top: 58px;
+  /* posição da seta */
+  left: 88%;
+  transform: translateX(-50%) rotate(-45deg);
+  /* gira a setinha */
+
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid var(--color-esmerald);
+  /* cor da seta */
+}
+
 .txt-pilha1,
 .txt-pilha2,
 .txt-pilha3,
@@ -743,8 +887,14 @@ textarea {
   bottom: -85%;
   left: -55%;
   transform: translate(-10%, 100%);
+  transition: all 1s ease;
 }
-
+.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+  transition: all .1s ease;
+}
 /*SECAO-3 - DICAS*/
 .secao-3 {
   display: flex;
