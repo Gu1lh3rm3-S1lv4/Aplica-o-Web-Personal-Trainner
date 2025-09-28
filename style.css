@@ -889,33 +889,329 @@ textarea {
   transform: translate(-10%, 100%);
   transition: all 1s ease;
 }
-.visible {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  transition: all .1s ease;
-}
-/*SECAO-3 - DICAS*/
+
+/*SECAO CONSULTORIA*/
 .secao-3 {
+  margin-top: 20%;
+}
+
+.secao-3 h1 {
+  text-align: center;
+  padding-top: 90px;
+  font-size: 3rem;
+  font-family: var(--font-grande);
+  font-weight: 600;
+}
+
+.secao-3 h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: var(--font-grande);
+  color: var(--color-esmerald);
+}
+
+.container-consul {
+  color: white;
+  position: relative;
+  font-family: sans-serif;
+  justify-items: center;
+  padding: 60px;
+
+}
+
+.container-consul .box {
+  width: 80.875em;
+  height: 31.875em;
+  padding: 1rem;
+  background-color: #77a8a811;
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
+}
+
+.container-consul .box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--color-esmerald);
+}
+
+.container-consul .box .title {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.container-consul .box div h3 {
+  display: block;
+  color: var(--color-esmerald);
+  margin-left: 2.5rem;
+  max-width: 100%;
+  width: fit-content;
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 3rem;
+  padding-top: 2rem;
+}
+
+.container-consul .box div p {
+  max-width: 100%;
+  width: fit-content;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 1.5rem;
+  padding-top: 2rem;
+}
+
+.container-consul .box:hover {
+  box-shadow: 0px 0px 20px 1px #ffbb763f;
+  border: 1px solid var(--color-esmerald);
+}
+
+.box-consultoria {
+  display: flex;
+  justify-content: space-around;
+  gap: 190px;
+  margin-bottom: 30px;
+}
+
+.box-consultoria img {
+  height: 380px;
+  border-radius: 10px;
+  width: 500px;
+  justify-content: end;
+
+}
+
+/*SECAO-4 - PRÓS E CONTRAS*/
+.secao-4 {
+  justify-items: center;
+  margin-top: 250px;
+}
+
+.secao-4 h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: var(--font-grande);
+}
+
+.secao-4 span {
+  background-image: linear-gradient(to right, var(--color-esmerald));
+  -webkit-background-clip: text;
+}
+
+.secao-4 h2 {
+  text-align: center;
+  font-size: 1.9rem;
+  margin: 20px;
+}
+
+.content-complete {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  /* espaço entre colunas */
+  justify-items: center;
+  font-family: var(--font-pequena);
+}
+
+.card-list {
+  max-width: 350px;
+  margin: 0 0 0 40px;
+
+}
+
+.card-content ul li {
+  font-size: 1rem;
+  padding: 4px 20px;
+  line-height: 1.6;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  /*alinha texto com svg*/
+}
+
+.card-list svg {
+  max-width: 30px;
+}
+
+.card-content h2 {
+  background-image: linear-gradient(red);
+  -webkit-background-clip: text;
+
+}
+
+.card-content-2 ul li {
+  font-size: 1rem;
+  padding: 8px 15px;
+  line-height: 1.6;
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  /*alinha texto com svg*/
+}
+
+.card-list-2 svg {
+  max-width: 30px;
+
+}
+
+.card-list-2 {
+  display: flex;
+  max-width: 350px;
+}
+
+.card-content-2 h2 {
+  background-image: linear-gradient(rgb(5, 218, 5));
+  -webkit-background-clip: text;
+}
+
+.m2 {
+  position: relative;
+  width: 70vmin;
+  /* Reduced size */
+  height: 70vmin;
+  /* Reduced size */
+  background: linear-gradient(135deg, #1e1e24 10%, #050505 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  animation: gradient-shift 5s ease-in-out infinite;
+  /* Faster animation */
+  background-size: 200% 200%;
+  /* Gradient shift */
+    border: 1px solid var(--color-esmerald);
+
+    border-radius: 10px;
+}
+
+.m2 .logo {
+  display: inline-block;
+  vertical-align: baseline;
+  user-select: none;
+  font-size: 5vmin;
+  /* Smaller font size */
+  color: white;
+  background-image: linear-gradient(to right, #626262, #fff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-weight: bold;
+  
+}
+
+.m2 .logo svg {
+  margin-right: -1vmin;
+  width: 5vmin;
+  /* Smaller SVG size */
+  height: 5vmin;
+  /* Smaller SVG size */
+}
+
+.m2::before,
+.m2::after {
+  --size: 5px;
+  /* Define uma variável CSS (custom property) que controla o "tamanho extra" da área do brilho */
+  content: "";
+  /* Necessário para que os pseudo-elementos (::before e ::after) apareçam */
+  position: absolute;
+  /* Faz os pseudo-elementos ficarem posicionados em relação ao elemento pai (.m2) */
+  /* Posiciona o pseudo-elemento um pouco para fora da borda do elemento */
+  top: calc(var(--size) / -2);
+  left: calc(var(--size) / -2);
+  /* Faz o pseudo-elemento ser maior que o .m2, adicionando "var(--size)" de cada lado */
+  width: calc(100% + var(--size));
+  height: calc(100% + var(--size));
+  /* Cria quatro gradientes radiais (um em cada canto do elemento):
+     - canto superior esquerdo → hsl(184, 93%, 60%) até transparente
+     - canto superior direito → verde (#06d6a0) até transparente
+     - canto inferior esquerdo → azul acinzentado (#77a8a8) até transparente
+     - canto inferior direito → bege claro (#f8ffe5) até transparente
+     O resultado é um "glow" colorido multicolorido nos cantos.
+  */
+  /*background: radial-gradient(circle at 0 0, hsla(184, 93%, 60%, 0.134), transparent),
+    radial-gradient(circle at 100% 0, #06d69e00, transparent),
+    radial-gradient(circle at 0 100%, #77a8a835, transparent),
+    radial-gradient(circle at 100% 100%, #f8ffe530, transparent);*/
+}
+
+
+/*insere algo depois do conteúdo do elemento.*/
+.m2::after {
+  --size: 2px;
+  /* Reduced inner glow size */
+  z-index: -1;
+}
+
+/*insere algo antes do conteúdo do elemento.*/
+.m2::before {
+  --size: 10px;
+  /* Reduced outer glow size */
+  z-index: -2;
+  filter: blur(2vmin);
+  /* Reduced blur */
+  animation: blur-animation 3s ease-in-out alternate infinite;
+  /* Faster blur animation */
+}
+
+/* Faster blur animation */
+@keyframes blur-animation {
+  to {
+    filter: blur(3vmin);
+    transform: scale(1.05);
+  }
+}
+
+/* Faster gradient animation */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.linha {
+  position: absolute;
+  top: 30%;
+  /* distância do topo */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* centraliza certinho */
+  height: 500px;
+  /* altura da linha */
+  width: 2px;
+  /* largura da linha */
+  background-color: var(--color-esmerald);
+  border-radius: 1px;
+  /* cantos arredondados */
+}
+
+/*SECAO-5 - DICAS*/
+.secao-5 {
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 200px;
 
-}
-
-.visible {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-  transition: all .1s ease;
 }
 
 .dicas-muscle {
   justify-items: center;
   text-align: center;
-  transform: translateY(40%);
-  filter: blur(15px);
-  transition: all 1s ease;
 }
 
 .dicas-muscle h1 {
@@ -994,9 +1290,6 @@ option {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transform: translateY(40%);
-  filter: blur(15px);
-  transition: all 1s ease;
 
 }
 
@@ -1088,323 +1381,4 @@ option {
   padding: 20px;
   box-sizing: border-box;
   user-select: none;
-}
-
-/*SECAO CONSULTORIA*/
-.secao-4 {
-  opacity: 0;
-  /* Elemento começa invisível (transparente) */
-  transform: translateY(10%);
-  /* Desloca o elemento completamente para a esquerda, fora da tela */
-  filter: blur(15px);
-  /* Aplica um desfoque inicial de 15px, dando efeito de "fora de foco" */
-  transition: all 1s ease;
-  /* Anima todas as propriedades acima em 2 segundos com transição suave */
-}
-
-.visible {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-}
-
-.secao-4 h1 {
-  text-align: center;
-  padding-top: 90px;
-  font-size: 3rem;
-  font-family: var(--font-grande);
-}
-
-.secao-4 h2 {
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: var(--font-grande);
-  color: var(--color-esmerald);
-}
-
-.container-consul {
-  color: white;
-  position: relative;
-  font-family: sans-serif;
-  justify-items: center;
-  padding: 60px;
-}
-
-.container-consul .box {
-  width: 90.875em;
-  height: 31.875em;
-  padding: 1rem;
-  background-color: #77a8a811;
-  border: 1px solid rgba(255, 255, 255, 0.222);
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
-  border-radius: 0.7rem;
-  transition: all ease 0.3s;
-}
-
-.container-consul .box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.container-consul .box .title {
-  font-size: 2rem;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-}
-
-.container-consul .box div h3 {
-  display: block;
-  margin-bottom: 0.5rem;
-  width: 500px;
-  font-size: 1.5rem;
-}
-
-.container-consul .box div p {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-}
-
-.container-consul .box:hover {
-  box-shadow: 0px 0px 20px 1px #ffbb763f;
-  border: 1px solid var(--color-esmerald);
-}
-
-.box-consultoria {
-  display: flex;
-  justify-content: space-around;
-  gap: 190px;
-  margin-bottom: 30px;
-}
-
-.box-consultoria img {
-  height: 380px;
-  border-radius: 10px;
-  width: 500px;
-  justify-content: end;
-
-}
-
-/*SECAO-5 - CONSULTORIA*/
-.secao-5 {
-  justify-items: center;
-  padding-top: 10rem;
-  transform: translateY(50%);
-  /* Desloca o elemento completamente para a esquerda, fora da tela */
-  filter: blur(15px);
-  /* Aplica um desfoque inicial de 15px, dando efeito de "fora de foco" */
-  transition: all 1s ease;
-  /* Anima todas as propriedades acima em 2 segundos com transição suave */
-}
-
-.visible {
-  opacity: 1;
-  filter: blur(0);
-  transform: translateY(0);
-}
-
-.secao-5 h1 {
-  text-align: center;
-  font-size: 2.5rem;
-  font-family: var(--font-grande);
-}
-
-.secao-5 span {
-  background-image: linear-gradient(to right, var(--color-esmerald));
-  -webkit-background-clip: text;
-}
-
-.secao-5 h2 {
-  text-align: center;
-  font-size: 1.9rem;
-  margin: 20px;
-}
-
-.content-complete {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  /* espaço entre colunas */
-  justify-items: center;
-  font-family: var(--font-pequena);
-}
-
-.card-list {
-  max-width: 350px;
-  margin: 0 0 0 40px;
-
-}
-
-.card-content ul li {
-  font-size: 1rem;
-  padding: 4px 20px;
-  line-height: 1.6;
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  /*alinha texto com svg*/
-}
-
-.card-list svg {
-  max-width: 30px;
-}
-
-.card-content h2 {
-  background-image: linear-gradient(red);
-  -webkit-background-clip: text;
-
-}
-
-.card-content-2 ul li {
-  font-size: 1rem;
-  padding: 8px 15px;
-  line-height: 1.6;
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  /*alinha texto com svg*/
-}
-
-.card-list-2 svg {
-  max-width: 30px;
-
-}
-
-.card-list-2 {
-  display: flex;
-  max-width: 350px;
-}
-
-.card-content-2 h2 {
-  background-image: linear-gradient(rgb(5, 218, 5));
-  -webkit-background-clip: text;
-}
-
-.m2 {
-  position: relative;
-  width: 70vmin;
-  /* Reduced size */
-  height: 70vmin;
-  /* Reduced size */
-  background: linear-gradient(135deg, #1e1e24 10%, #050505 60%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  animation: gradient-shift 5s ease-in-out infinite;
-  /* Faster animation */
-  background-size: 200% 200%;
-  /* Gradient shift */
-}
-
-.m2 .logo {
-  display: inline-block;
-  vertical-align: baseline;
-  user-select: none;
-  font-size: 5vmin;
-  /* Smaller font size */
-  color: white;
-  background-image: linear-gradient(to right, #626262, #fff);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-weight: bold;
-}
-
-.m2 .logo svg {
-  margin-right: -1vmin;
-  width: 5vmin;
-  /* Smaller SVG size */
-  height: 5vmin;
-  /* Smaller SVG size */
-}
-
-.m2::before,
-.m2::after {
-  --size: 5px;
-  /* Define uma variável CSS (custom property) que controla o "tamanho extra" da área do brilho */
-  content: "";
-  /* Necessário para que os pseudo-elementos (::before e ::after) apareçam */
-  position: absolute;
-  /* Faz os pseudo-elementos ficarem posicionados em relação ao elemento pai (.m2) */
-  /* Posiciona o pseudo-elemento um pouco para fora da borda do elemento */
-  top: calc(var(--size) / -2);
-  left: calc(var(--size) / -2);
-  /* Faz o pseudo-elemento ser maior que o .m2, adicionando "var(--size)" de cada lado */
-  width: calc(100% + var(--size));
-  height: calc(100% + var(--size));
-  /* Cria quatro gradientes radiais (um em cada canto do elemento):
-     - canto superior esquerdo → hsl(184, 93%, 60%) até transparente
-     - canto superior direito → verde (#06d6a0) até transparente
-     - canto inferior esquerdo → azul acinzentado (#77a8a8) até transparente
-     - canto inferior direito → bege claro (#f8ffe5) até transparente
-     O resultado é um "glow" colorido multicolorido nos cantos.
-  */
-  background: radial-gradient(circle at 0 0, hsla(184, 93%, 60%, 0.134), transparent),
-    radial-gradient(circle at 100% 0, #06d69e39, transparent),
-    radial-gradient(circle at 0 100%, #77a8a835, transparent),
-    radial-gradient(circle at 100% 100%, #f8ffe530, transparent);
-}
-
-
-/*insere algo depois do conteúdo do elemento.*/
-.m2::after {
-  --size: 2px;
-  /* Reduced inner glow size */
-  z-index: -1;
-}
-
-/*insere algo antes do conteúdo do elemento.*/
-.m2::before {
-  --size: 10px;
-  /* Reduced outer glow size */
-  z-index: -2;
-  filter: blur(2vmin);
-  /* Reduced blur */
-  animation: blur-animation 3s ease-in-out alternate infinite;
-  /* Faster blur animation */
-}
-
-/* Faster blur animation */
-@keyframes blur-animation {
-  to {
-    filter: blur(3vmin);
-    transform: scale(1.05);
-  }
-}
-
-/* Faster gradient animation */
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.linha {
-  position: absolute;
-  top: 30%;
-  /* distância do topo */
-  left: 50%;
-  /* centraliza horizontalmente */
-  transform: translateX(-50%);
-  /* centraliza certinho */
-  height: 500px;
-  /* altura da linha */
-  width: 2px;
-  /* largura da linha */
-  background-color: var(--color-esmerald);
-  border-radius: 1px;
-  /* cantos arredondados */
 }

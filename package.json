@@ -1,5 +1,15 @@
 {
     "name": "aplicacao-web-personal-trainner",
     "version": "1.0.0",
-    "description": "Um novo projeto de um website com propriedades para academia e nutrição"
+    "description": "Um novo projeto de um website com propriedades para academia e nutrição",
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gu1lh3rm3-S1lv4/Aplica-o-Web-Personal-Trainner"
+  },
+    "author": "Guilherme Silva",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/Gu1lh3rm3-S1lv4/Aplica-o-Web-Personal-Trainner/issues"
+  }
 }
