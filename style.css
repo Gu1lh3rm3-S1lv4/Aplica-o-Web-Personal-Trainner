@@ -1088,9 +1088,9 @@ textarea {
   /* Faster animation */
   background-size: 200% 200%;
   /* Gradient shift */
-    border: 1px solid var(--color-esmerald);
+  border: 1px solid var(--color-esmerald);
 
-    border-radius: 10px;
+  border-radius: 10px;
 }
 
 .m2 .logo {
@@ -1104,7 +1104,7 @@ textarea {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   font-weight: bold;
-  
+
 }
 
 .m2 .logo svg {
@@ -1381,4 +1381,80 @@ option {
   padding: 20px;
   box-sizing: border-box;
   user-select: none;
+}
+
+/*FOOTER*/
+
+.footer {
+  position: absolute;
+  border: none;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to top, rgba(50, 113, 113, 0.533), rgba(0, 0, 0, 0.293)30%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.img-footer {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  margin-left: 100px;
+}
+
+.img-footer img {
+  width: 100%;
+  height: 100%;
+
+}
+
+.faq p {
+  color: var(--color-destaque1);
+  font-size: 1.5rem;
+}
+
+.list-footer p {
+  flex: 1;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-family: var(--font-pequena);
+  align-items: baseline;
+  font-weight: 600;
+  color: var(--color-destaque1);
+}
+
+.list-footer p+p {
+  margin-top: 0.5rem;
+  /* Dá espaço entre os parágrafos */
+}
+
+.post-content {
+  max-height: 0;
+  /* Começa fechado */
+  overflow: hidden;
+  /* Esconde o que passa do tamanho */
+  transition: max-height 0.4s ease;
+  /* Animação suave */
+}
+
+.post-content.visible {
+  max-height: 500px;
+  /* Valor suficiente para o conteúdo */
+}
+
+
+.img-footer-pessoal {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin-right: 100px;
+}
+
+.img-footer-pessoal img {
+  width: 100%;
+  height: 100%;
+  border-radius: 23px;
 }
