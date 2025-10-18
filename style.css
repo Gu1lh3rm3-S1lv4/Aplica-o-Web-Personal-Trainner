@@ -1386,10 +1386,11 @@ option {
 /*FOOTER*/
 
 .footer {
+  margin-top: 100px;
   position: absolute;
   border: none;
   width: 100%;
-  height: 500px;
+  height: 50%;
   background: linear-gradient(to top, rgba(50, 113, 113, 0.533), rgba(0, 0, 0, 0.293)30%);
   display: flex;
   justify-content: space-between;
@@ -1411,24 +1412,60 @@ option {
 
 .faq p {
   color: var(--color-destaque1);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 600;
 }
 
-.list-footer p {
+.geral-list p {
   flex: 1;
   display: flex;
   position: relative;
-  flex-direction: column;
+  flex-direction: row;
   font-size: 1.2rem;
   font-family: var(--font-pequena);
   align-items: baseline;
   font-weight: 600;
   color: var(--color-destaque1);
+  padding: 0px;
+  gap: 5px;
+  /*espaçamento entre span e p*/
 }
 
-.list-footer p+p {
-  margin-top: 0.5rem;
-  /* Dá espaço entre os parágrafos */
+.post-summary {
+  margin: 0 auto;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.post-summary span {
+  color: #555353;
+}
+
+.linha-h {
+  position: absolute;
+  width: 550px;
+  height: 0.1px;
+  border: 0.1px solid;
+}
+
+.read-more,
+.read-more-2,
+.read-more-3,
+.read-more-4 {
+  position: relative;
+  margin-left: 500px;
+  bottom: 35px;
+  background: transparent;
+  color: var(--color-esmerald);
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.read-more:hover {
+  background: transparent;
 }
 
 .post-content {
@@ -1438,6 +1475,7 @@ option {
   /* Esconde o que passa do tamanho */
   transition: max-height 0.4s ease;
   /* Animação suave */
+  display: block;
 }
 
 .post-content.visible {
