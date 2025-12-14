@@ -16,7 +16,6 @@ const myObserver = new IntersectionObserver((entries) => {
         }
     })
 });
-
 // Seleciona todos os elementos que têm a classe "secao-3"
 const elementos = document.querySelectorAll(".secao-3");
 
@@ -25,5 +24,3 @@ elementos.forEach((Element) =>
     // ...coloca o "observador" para monitorar esse elemento
     myObserver.observe(Element)
 );
-
-

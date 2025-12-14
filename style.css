@@ -34,7 +34,6 @@
   --color-esmerald: #06d6a0;
   --color-white: #f6f6f6;
   --color-destaque1: #77a8a8;
-  --color-destaque2: coral;
   --font-grande: 'tt-hoves-pro-trial', sans-serif;
   --font-pequena: 'young-serif', sans-serif;
 }
@@ -94,7 +93,8 @@ body {
   background-position: bottom;
 }
 
-.menu-navegação ul li a:hover {
+.menu-navegação ul li a:hover,
+.menu-navegação ul li a:focus-visible {
   /* Expande o gradiente até preencher */
   background-size: 100% 100%;
   color: #111;
@@ -282,7 +282,7 @@ body {
   align-items: center;
   width: 100%;
   height: 1150px;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(https://engenhariadocorpo.com.br/wp-content/uploads/2024/03/mulher-com-abdomen-visivel-fazendo-fitness-1-scaled.jpg);
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("img-web/foto principal2.png");
   background-size: cover;
 }
 
@@ -563,9 +563,8 @@ textarea {
 .container-s2 {
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, 0fr);
-  /*colunas*/
+  display: flex;
+  gap: 2rem;
   justify-content: center;
   /*centraliza o grid*/
 }
@@ -987,11 +986,76 @@ textarea {
   justify-content: end;
 
 }
+.linha1 {
+  position: absolute;
+  top: 23%;
+  /* distância do topo */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* centraliza certinho */
+  height: 130px;
+  /* altura da linha */
+  width: 2px;
+  /* largura da linha */
+  background-color: var(--color-esmerald);
+  border-radius: 1px;
+  /* cantos arredondados */
+}
+.linha2 {
+  position: absolute;
+  top: 41.7%;
+  /* distância do topo */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* centraliza certinho */
+  height: 120px;
+  /* altura da linha */
+  width: 2px;
+  /* largura da linha */
+  background-color: var(--color-esmerald);
+  border-radius: 1px;
+  /* cantos arredondados */
+}
+.linha3 {
+  position: absolute;
+  top: 60.5%;
+  /* distância do topo */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* centraliza certinho */
+  height: 120px;
+  /* altura da linha */
+  width: 2px;
+  /* largura da linha */
+  background-color: var(--color-esmerald);
+  border-radius: 1px;
+  /* cantos arredondados */
+}
+.linha4 {
+  position: absolute;
+  top: 79.4%;
+  /* distância do topo */
+  left: 50%;
+  /* centraliza horizontalmente */
+  transform: translateX(-50%);
+  /* centraliza certinho */
+  height: 130px;
+  /* altura da linha */
+  width: 2px;
+  /* largura da linha */
+  background-color: var(--color-esmerald);
+  border-radius: 1px;
+  /* cantos arredondados */
+}
 
-/*SECAO-4 - PRÓS E CONTRAS*/
+
+/**SECAO-4 - PRÓS E CONTRAS*/
 .secao-4 {
   justify-items: center;
-  margin-top: 250px;
+  padding: 20rem 0 0;
 }
 
 .secao-4 h1 {
@@ -1021,7 +1085,7 @@ textarea {
 }
 
 .card-list {
-  max-width: 350px;
+  width: 350px;
   margin: 0 0 0 40px;
 
 }
@@ -1063,9 +1127,10 @@ textarea {
 
 }
 
+/**RETIRADA DO MAX*/
 .card-list-2 {
   display: flex;
-  max-width: 350px;
+  width: 350px;
 }
 
 .card-content-2 h2 {
@@ -1075,9 +1140,9 @@ textarea {
 
 .m2 {
   position: relative;
-  width: 70vmin;
+  max-width: 50%;
   /* Reduced size */
-  height: 70vmin;
+  height: 70%;
   /* Reduced size */
   background: linear-gradient(135deg, #1e1e24 10%, #050505 60%);
   display: flex;
@@ -1201,11 +1266,12 @@ textarea {
   /* cantos arredondados */
 }
 
+
 /*SECAO-5 - DICAS*/
 .secao-5 {
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  padding: 100px;
 
 }
 
@@ -1245,6 +1311,7 @@ option {
   border-radius: 10px;
   width: 80px;
   border: 1px solid var(--color-esmerald);
+  cursor: pointer;
 }
 
 #load {
@@ -1252,10 +1319,12 @@ option {
   background: var(--color-black);
   border-radius: 10px;
   width: 80px;
+  font-weight: 600;
+  border: solid 1px var(--color-esmerald);
 }
 
 #load:hover {
-  border: 1px solid var(--color-esmerald);
+  box-shadow: var(--color-esmerald) 0px 0px 0px 1px;
 }
 
 /* Grid para organizar os exercícios em cards */
@@ -1383,25 +1452,24 @@ option {
   user-select: none;
 }
 
-/*FOOTER*/
+/**FOOTER*/
 
 .footer {
   margin-top: 100px;
-  position: absolute;
-  border: none;
+  position: relative;
   width: 100%;
-  height: 50%;
-  background: linear-gradient(to top, rgba(50, 113, 113, 0.533), rgba(0, 0, 0, 0.293)30%);
+  height:auto;
+  padding: 4rem 0rem;
+  background: linear-gradient(to top, rgba(50, 113, 113, 0.249), rgba(0, 0, 0, 0.293)30%);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between
+
 }
 
 .img-footer {
   position: relative;
   width: 500px;
   height: 200px;
-  margin-left: 100px;
 }
 
 .img-footer img {
@@ -1411,7 +1479,7 @@ option {
 }
 
 .faq p {
-  color: var(--color-destaque1);
+  color: var(--color-esmerald);
   font-size: 2rem;
   font-weight: 600;
 }
@@ -1421,14 +1489,14 @@ option {
   display: flex;
   position: relative;
   flex-direction: row;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-family: var(--font-pequena);
-  align-items: baseline;
   font-weight: 600;
   color: var(--color-destaque1);
   padding: 0px;
   gap: 5px;
   /*espaçamento entre span e p*/
+  color: var(--color-esmerald);
 }
 
 .post-summary {
@@ -1446,6 +1514,7 @@ option {
   width: 550px;
   height: 0.1px;
   border: 0.1px solid;
+  color: #565555;
 }
 
 .read-more,
@@ -1469,20 +1538,37 @@ option {
 }
 
 .post-content {
-  max-height: 0;
-  /* Começa fechado */
-  overflow: hidden;
-  /* Esconde o que passa do tamanho */
-  transition: max-height 0.4s ease;
-  /* Animação suave */
-  display: block;
-}
+  /* --- LAYOUT E TAMANHO --- */
+  /*(número mágico). Use 100% e controle o espaço via padding no pai ou margem. */
+  width: 100%; 
 
+  /*'ch' (caracteres) ou 'rem'. 
+     65ch é considerado o tamanho ideal para leitura (aprox. 65 letras por linha). */
+  max-width: 65ch; 
+  
+  /* --- LÓGICA DO ACORDEÃO (MANTIDA) --- */
+  max-height: 0;
+  overflow: hidden;
+  
+    /* Dica: 'ease-out' costuma ser mais agradável para elementos que "entram/abrem" na tela */
+  transition: max-height 0.4s ease-out;
+  
+  /* Boa prática: adicionar altura de linha para textos longos */
+  line-height: 1.6; 
+  
+  /* display: block é o padrão de divs, pode ser omitido se quiser limpar o código, 
+     mas não faz mal deixar explícito. */
+  display: block; 
+}
+.post-content p{
+  color: var(--color-light-yellow);
+  font-size: 15px;
+  padding: 0 0 5%;
+}
 .post-content.visible {
   max-height: 500px;
   /* Valor suficiente para o conteúdo */
 }
-
 
 .img-footer-pessoal {
   position: relative;
@@ -1495,4 +1581,243 @@ option {
   width: 100%;
   height: 100%;
   border-radius: 23px;
+}
+
+/*******BOTAO BACKUPBUTTON******/
+.button-fixed {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease, box-shadow 0.5s ease;
+}
+
+#BackUpButton {
+  bottom: 20px;
+  left: 20px;
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  background: linear-gradient(135deg, #00f2ff00, #6a00ff00);
+}
+
+#BackUpButton:hover {
+  box-shadow: 0px 0px 10px #267c87;
+  transition: all .3s ease-in-out;
+  transform: scale(1.1);
+}
+
+#backUpButton i {
+  color: #00d0ff;
+}
+
+#btnWhats {
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+    animation: pulse 2s infinite;
+}
+#btnWhats:hover{
+    box-shadow: #00ff80 0px 0px 20px;
+}
+#btnWhats i {
+    font-size: 24px;
+    color: #fff;
+}
+
+/** CSS RESPONSIVO */
+/* Telas grandes (desktops) - ajustes finos */
+@media (max-width: 1440px) {
+  .container-consul .box {
+    width: 100%;
+    height: auto;
+  }
+
+  .box-consultoria {
+    gap: 2rem;
+  }
+
+  .box-consultoria img {
+    width: 400px;
+    height: auto;
+  }
+}
+
+/** Tablets e Desktops menores */
+@media (max-width: 1024px) {
+
+  /* Header */
+  .header-topo {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .menu-navegação {
+    margin: 20px 0;
+  }
+
+  .btn-contatos {
+    padding-right: 0;
+    margin: 10px 0;
+  }
+
+  /* Seção 1 */
+  #img-secao {
+    flex-direction: column;
+    height: auto;
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .txt-topo {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .img-pessoal img {
+    width: 350px;
+  }
+
+  .btn-secao-1 {
+    justify-content: center;
+  }
+
+  /* Seção Benefícios */
+  .circle-container {
+    transform: scale(0.8);
+  }
+
+  /* Seção Consultoria */
+  .box-consultoria {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .box-consultoria img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+  }
+
+  .container-consul .box {
+    width: 90%;
+  }
+
+  /* Prós e Contras */
+  .content-complete {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .linha {
+    display: none;
+  }
+
+  .card-list {
+    margin: 0;
+  }
+
+  /* Dicas */
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    padding: 2rem 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .img-footer {
+    margin: 0 0 2rem 0;
+    width: 300px;
+  }
+
+  .faq {
+    margin-bottom: 2rem;
+  }
+
+  .geral-list p {
+    justify-content: center;
+  }
+
+  .read-more,
+  .read-more-2,
+  .read-more-3,
+  .read-more-4 {
+    margin-left: 0;
+    position: static;
+    margin-top: 10px;
+  }
+
+  .linha-h {
+    width: 80%;
+    left: 10%;
+    
+  }
+
+  .img-footer-pessoal {
+    margin: 2rem 0 0 0;
+    width: 80%;
+    max-width: 400px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+
+  /* Seção 1 */
+  .txt-topo h1 {
+    font-size: 2rem;
+  }
+
+  .img-pessoal img {
+    width: 250px;
+  }
+
+  /* Modal */
+  .modal {
+    width: 90%;
+    min-width: unset;
+  }
+
+  /* Seção Benefícios */
+  .secao-2 {
+    margin: 4rem 0rem 15rem;
+  }
+
+  .circle-container {
+    transform: scale(0.6);
+    /* Ainda menor para caber */
+  }
+
+  /**Seção 4 */
+  .m2 {
+    display: none;
+    /* Oculta o card complexo para simplificar */
+  }
+
+  /* Seção IMC */
+  .container-imc {
+    width: 90%;
+  }
+
+  .input {
+    flex-direction: column;
+    height: auto;
+    gap: 10px;
+  }
 }
