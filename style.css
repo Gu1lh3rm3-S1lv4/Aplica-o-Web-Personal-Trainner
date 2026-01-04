@@ -6,6 +6,13 @@
   width: 10px;
 }
 
+/* Scrollbar para mobile */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
 /* Fundo da barra */
 ::-webkit-scrollbar-track {
   background: linear-gradient(180deg, #000000, #000000), transparent 10%;
@@ -61,7 +68,6 @@ body {
   height: 120px;
   display: flex;
   justify-content: space-around;
-
 }
 
 .logo-topo img {
@@ -107,6 +113,165 @@ body {
   display: flex;
   padding-right: 50px;
   margin: 30px;
+}
+
+/* Botão Hamburger - Escondido por padrão (apenas mobile) */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 999;
+  position: relative;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Overlay - Fundo escuro quando menu está aberto */
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Menu Lateral */
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  max-width: 85%;
+  height: 100vh;
+  background: linear-gradient(120deg, rgba(0, 0, 0, 0.97), rgba(35, 111, 108, 0.342));
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  padding-top: 80px;
+}
+
+.menu-lateral.active {
+  right: 0;
+}
+
+/* Botão Fechar Menu */
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1002;
+}
+
+.menu-close span {
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-white);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.menu-close span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu-close span:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+.menu-close:hover span {
+  background-color: var(--color-esmerald);
+}
+
+/* Lista do Menu Lateral */
+.menu-lateral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-lateral-list li {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-lateral-link {
+  display: block;
+  padding: 20px 30px;
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-grande);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.menu-lateral-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: var(--color-esmerald);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.menu-lateral-link:hover,
+.menu-lateral-link:focus {
+  background-color: rgba(6, 214, 160, 0.1);
+  padding-left: 40px;
+  color: var(--color-esmerald);
+}
+
+.menu-lateral-link:hover::before,
+.menu-lateral-link:focus::before {
+  transform: scaleY(1);
 }
 
 .card svg {
@@ -281,8 +446,8 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 1150px;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url("img-web/foto principal2.png");
+  height: 100dvh;
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(img-web/foto\ pessoal.png);
   background-size: cover;
 }
 
@@ -986,6 +1151,7 @@ textarea {
   justify-content: end;
 
 }
+
 .linha1 {
   position: absolute;
   top: 23%;
@@ -1002,6 +1168,7 @@ textarea {
   border-radius: 1px;
   /* cantos arredondados */
 }
+
 .linha2 {
   position: absolute;
   top: 41.7%;
@@ -1018,6 +1185,7 @@ textarea {
   border-radius: 1px;
   /* cantos arredondados */
 }
+
 .linha3 {
   position: absolute;
   top: 60.5%;
@@ -1034,6 +1202,7 @@ textarea {
   border-radius: 1px;
   /* cantos arredondados */
 }
+
 .linha4 {
   position: absolute;
   top: 79.4%;
@@ -1458,12 +1627,11 @@ option {
   margin-top: 100px;
   position: relative;
   width: 100%;
-  height:auto;
+  height: auto;
   padding: 4rem 0rem;
   background: linear-gradient(to top, rgba(50, 113, 113, 0.249), rgba(0, 0, 0, 0.293)30%);
   display: flex;
   justify-content: space-between
-
 }
 
 .img-footer {
@@ -1540,31 +1708,33 @@ option {
 .post-content {
   /* --- LAYOUT E TAMANHO --- */
   /*(número mágico). Use 100% e controle o espaço via padding no pai ou margem. */
-  width: 100%; 
+  width: 100%;
 
   /*'ch' (caracteres) ou 'rem'. 
      65ch é considerado o tamanho ideal para leitura (aprox. 65 letras por linha). */
-  max-width: 65ch; 
-  
+  max-width: 65ch;
+
   /* --- LÓGICA DO ACORDEÃO (MANTIDA) --- */
   max-height: 0;
   overflow: hidden;
-  
-    /* Dica: 'ease-out' costuma ser mais agradável para elementos que "entram/abrem" na tela */
+
+  /* Dica: 'ease-out' costuma ser mais agradável para elementos que "entram/abrem" na tela */
   transition: max-height 0.4s ease-out;
-  
+
   /* Boa prática: adicionar altura de linha para textos longos */
-  line-height: 1.6; 
-  
+  line-height: 1.6;
+
   /* display: block é o padrão de divs, pode ser omitido se quiser limpar o código, 
      mas não faz mal deixar explícito. */
-  display: block; 
+  display: block;
 }
-.post-content p{
+
+.post-content p {
   color: var(--color-light-yellow);
   font-size: 15px;
   padding: 0 0 5%;
 }
+
 .post-content.visible {
   max-height: 500px;
   /* Valor suficiente para o conteúdo */
@@ -1581,6 +1751,20 @@ option {
   width: 100%;
   height: 100%;
   border-radius: 23px;
+}
+
+.credenciais {
+  background: linear-gradient(to bottom, rgba(50, 113, 113, 0.249), rgba(50, 113, 113, 0.249)30%);
+  padding: 0 0 20px 0;
+}
+
+.credenciais p {
+  position: relative;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
 }
 
 /*******BOTAO BACKUPBUTTON******/
@@ -1618,18 +1802,20 @@ option {
 }
 
 #btnWhats {
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
-    animation: pulse 2s infinite;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  box-shadow: 0px 0px 10px rgba(0, 255, 0, 0.5);
+  animation: pulse 2s infinite;
 }
-#btnWhats:hover{
-    box-shadow: #00ff80 0px 0px 20px;
+
+#btnWhats:hover {
+  box-shadow: #00ff80 0px 0px 20px;
 }
+
 #btnWhats i {
-    font-size: 24px;
-    color: #fff;
+  font-size: 24px;
+  color: #fff;
 }
 
 /** CSS RESPONSIVO */
@@ -1661,8 +1847,25 @@ option {
     padding: 1rem 0;
   }
 
+  .logo-topo img {
+    width: 200px;
+    margin: 15px;
+  }
+
   .menu-navegação {
     margin: 20px 0;
+  }
+
+  .menu-navegação ul li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu-navegação ul li a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
   }
 
   .btn-contatos {
@@ -1670,17 +1873,32 @@ option {
     margin: 10px 0;
   }
 
+  .card {
+    width: 180px;
+    height: 45px;
+  }
+
   /* Seção 1 */
   #img-secao {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
     padding: 4rem 1rem;
     text-align: center;
+    background-position: center;
   }
 
   .txt-topo {
     width: 90%;
     margin-bottom: 2rem;
+  }
+
+  .txt-topo h1 {
+    font-size: 2.2rem;
+  }
+
+  .txt-topo h2 {
+    font-size: 1.3rem;
   }
 
   .img-pessoal img {
@@ -1689,14 +1907,101 @@ option {
 
   .btn-secao-1 {
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .animated-button {
+    padding: 14px 28px;
+    font-size: 14px;
   }
 
   /* Seção Benefícios */
+  .secao-2 {
+    margin: 5rem 0rem 15rem;
+  }
+
+  .txt-beneficios h1 {
+    font-size: 2.5rem;
+  }
+
+  .txt-beneficios p {
+    font-size: 1.5rem;
+  }
+
+  .pilares {
+    padding: 4rem 2rem;
+  }
+
   .circle-container {
-    transform: scale(0.8);
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    transform: scale(0.75);
+  }
+
+  .central-circle {
+    width: 400px;
+    height: 400px;
+  }
+
+  .central-circle::after {
+    width: 320px;
+    height: 320px;
+  }
+
+  .central-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pillar {
+    width: 55px;
+    height: 55px;
+    font-size: 1rem;
+  }
+
+  .txt-pilha1,
+  .txt-pilha2,
+  .txt-pilha3,
+  .txt-pilha4 {
+    width: 280px;
+    font-size: 0.95rem;
+  }
+
+  .txt-pilha1 h1,
+  .txt-pilha2 h1,
+  .txt-pilha3 h1,
+  .txt-pilha4 h1 {
+    font-size: 1.3rem;
+  }
+
+  .linha-bene1,
+  .linha-bene2,
+  .linha-bene3,
+  .linha-bene4 {
+    display: none;
   }
 
   /* Seção Consultoria */
+  .secao-3 {
+    margin-top: 15%;
+  }
+
+  .secao-3 h1 {
+    font-size: 2.5rem;
+    padding-top: 60px;
+  }
+
+  .secao-3 h2 {
+    font-size: 1.3rem;
+  }
+
+  .container-consul {
+    padding: 40px 20px;
+  }
+
   .box-consultoria {
     flex-direction: column;
     align-items: center;
@@ -1710,48 +2015,179 @@ option {
   }
 
   .container-consul .box {
-    width: 90%;
+    width: 95%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .container-consul .box div h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .container-consul .box div p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .linha1,
+  .linha2,
+  .linha3,
+  .linha4 {
+    display: none;
   }
 
   /* Prós e Contras */
+  .secao-4 {
+    padding: 15rem 1rem 0;
+  }
+
+  .secao-4 h1 {
+    font-size: 2rem;
+  }
+
+  .secao-4 h2 {
+    font-size: 1.5rem;
+  }
+
   .content-complete {
     grid-template-columns: 1fr;
     justify-items: center;
+    gap: 30px;
+    padding: 0 1rem;
   }
 
   .linha {
     display: none;
   }
 
-  .card-list {
+  .card-list,
+  .card-list-2 {
+    width: 100%;
+    max-width: 400px;
     margin: 0;
   }
 
+  .card-content ul li,
+  .card-content-2 ul li {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
+
+  .card-list svg,
+  .card-list-2 svg {
+    max-width: 25px;
+  }
+
   /* Dicas */
+  .secao-5 {
+    padding: 60px 20px;
+    flex-direction: column;
+  }
+
+  .dicas-muscle h1 {
+    font-size: 1.7rem;
+    padding-top: 40px;
+  }
+
+  .dicas-muscle h2 {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
+
   .grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     padding: 2rem 1rem;
+    gap: 12px;
+  }
+
+  .gif img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .secao-imc {
+    padding: 40px 20px;
+  }
+
+  .secao-imc h1 {
+    font-size: 1.1rem;
+    width: 90%;
+    padding-bottom: 30px;
+  }
+
+  .container-imc {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    height: 40px;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .input label {
+    font-size: 1.2rem;
+  }
+
+  .input input {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .secao-imc button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
+
+  .result {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.2rem;
+    padding: 15px;
   }
 
   /* Footer */
   .footer {
     flex-direction: column;
     height: auto;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     text-align: center;
   }
 
   .img-footer {
     margin: 0 0 2rem 0;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   .faq {
     margin-bottom: 2rem;
   }
 
+  .faq p {
+    font-size: 1.5rem;
+  }
+
+  .geral-list {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
   .geral-list p {
     justify-content: center;
+    font-size: 1rem;
   }
 
   .read-more,
@@ -1761,63 +2197,969 @@ option {
     margin-left: 0;
     position: static;
     margin-top: 10px;
+    padding: 8px 20px;
   }
 
   .linha-h {
-    width: 80%;
-    left: 10%;
-    
+    width: 90%;
+    left: 5%;
   }
 
   .img-footer-pessoal {
-    margin: 2rem 0 0 0;
-    width: 80%;
+    margin: 2rem auto 0;
+    width: 90%;
     max-width: 400px;
+    height: auto;
+  }
+
+  .credenciais {
+    padding: 15px 0;
+  }
+
+  .credenciais p {
+    font-size: 0.9rem;
+  }
+
+  /* Botões fixos */
+  .button-fixed {
+    width: 45px;
+    height: 45px;
+  }
+
+  #BackUpButton {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  #btnWhats {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  #btnWhats i {
+    font-size: 20px;
   }
 }
 
 /* Smartphones */
 @media (max-width: 768px) {
 
+  /* Header */
+  .header-topo {
+    flex-direction: row;
+    gap: 99px; 
+  }
+
+  .logo-topo {
+    order: 1;
+    flex: 0 0 auto;
+  }
+
+  .logo-topo img {
+    width: 150px;
+    margin: 10px 0;
+  }
+
+  /* Esconde o menu tradicional em mobile */
+  .menu-topo {
+    display: none !important;
+
+  }
+
+  /* Mostra o botão hamburger em mobile */
+  .hamburger-menu {
+    display: flex;
+    order: 2;
+    flex: 0 0 auto;
+    margin: 0 60px;
+    align-items: center;
+  }
+
+  .menu-navegação {
+    margin: 15px 0;
+    width: 100%;
+
+  }
+
+  .menu-navegação ul li {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .menu-navegação ul li a {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Previne scroll do body quando menu está aberto */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .btn-contatos {
+    margin: 10px 0;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    display: none;
+    /* Esconde em mobile - pode ser adicionado ao menu lateral se necessário */
+  }
+
+  /* Menu Lateral ajustes para mobile */
+  .menu-lateral {
+    width: 300px;
+    max-width: 90%;
+  }
+
+  .card {
+    width: 160px;
+    height: 40px;
+  }
+
+  .card svg {
+    height: 20px;
+  }
+
+  .card .social-link {
+    width: 20%;
+  }
+
   /* Seção 1 */
+
+  #img-secao {
+    padding: 3rem 1rem;
+    min-height: auto;
+    background-position: right;
+
+  }
+
+  .txt-topo {
+    margin-top: 55%;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
   .txt-topo h1 {
-    font-size: 2rem;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .txt-topo h2 {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .txt-topo p {
+    font-size: 0.9rem;
   }
 
   .img-pessoal img {
     width: 250px;
+    max-width: 100%;
+  }
+
+  .btn-secao-1 {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    padding: 15px 50px;
+    gap: 12px;
+  }
+
+  .animated-button {
+    display: flex;
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 24px;
+    font-size: 13px;
+    justify-content: center;
   }
 
   /* Modal */
   .modal {
-    width: 90%;
+    width: 95%;
     min-width: unset;
+    padding: 30px 20px;
+    min-height: auto;
+  }
+
+  .modal h1 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .formulario {
+    padding: 15px;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .formulario textarea {
+    height: 80px;
+  }
+
+  .fechar {
+    top: 5px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    font-size: 12pt;
   }
 
   /* Seção Benefícios */
   .secao-2 {
-    margin: 4rem 0rem 15rem;
+    margin: 2rem 0rem 3rem;
+    padding: 0 0.5rem;
+  }
+
+  .container-Beneficios {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .txt-beneficios {
+    padding: 0 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .txt-beneficios h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .txt-beneficios p {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+
+  .pilares {
+    padding: 1rem 0;
+    overflow: visible;
+    width: 100%;
   }
 
   .circle-container {
-    transform: scale(0.6);
-    /* Ainda menor para caber */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    transform: none;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
   }
 
-  /**Seção 4 */
-  .m2 {
+  .central-circle {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 20px;
+  }
+
+  .central-circle::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  .central-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .pillar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+    z-index: 4;
+    margin: 0;
+  }
+
+  /* Reset posicionamento dos pilares para mobile */
+  .pillar1,
+  .pillar2,
+  .pillar3,
+  .pillar4 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  .txt-pilha1,
+  .txt-pilha2,
+  .txt-pilha3,
+  .txt-pilha4 {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    font-size: 1rem;
+    line-height: 1.4;
+    z-index: 3;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    text-align: center !important;
+    margin-bottom: 20px;
+  }
+
+  .txt-pilha1 h1,
+  .txt-pilha2 h1,
+  .txt-pilha3 h1,
+  .txt-pilha4 h1 {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .txt-pilha1 p,
+  .txt-pilha2 p,
+  .txt-pilha3 p,
+  .txt-pilha4 p {
+    font-size: 0.7rem;
+    line-height: 1.2;
+  }
+
+  .linha-bene1,
+  .linha-bene2,
+  .linha-bene3,
+  .linha-bene4 {
     display: none;
-    /* Oculta o card complexo para simplificar */
   }
 
-  /* Seção IMC */
+  .circle-container h1 {
+    font-size: 1rem;
+  }
+
+  /* Seção Consultoria */
+  .secao-3 {
+    margin-top: 10%;
+  }
+
+  .secao-3 h1 {
+    font-size: 2rem;
+    padding-top: 40px;
+  }
+
+  .secao-3 h2 {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .container-consul {
+    padding: 30px 15px;
+  }
+
+  .container-consul .box {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .container-consul .box div h3 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    padding-top: 1rem;
+  }
+
+  .container-consul .box div p {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+    padding-top: 1rem;
+  }
+
+  .box-consultoria {
+    gap: 1.5rem;
+  }
+
+  .box-consultoria img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Seção 4 */
+  .secao-4 {
+    padding: 10rem 1rem 0;
+  }
+
+  .secao-4 h1 {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .secao-4 h2 {
+    font-size: 1.3rem;
+  }
+
+  .m2 {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .m2 .logo h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .content-complete {
+    gap: 25px;
+    padding: 0;
+  }
+
+  .card-list,
+  .card-list-2 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .card-content h2,
+  .card-content-2 h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .card-content ul li,
+  .card-content-2 ul li {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+    gap: 12px;
+  }
+
+  .card-list svg,
+  .card-list-2 svg {
+    max-width: 22px;
+    flex-shrink: 0;
+  }
+
+  /* Dicas */
+  .secao-5 {
+    padding: 50px 15px;
+  }
+
+  .dicas-muscle {
+    width: 100%;
+  }
+
+  .dicas-muscle h1 {
+    font-size: 1.4rem;
+    padding-top: 30px;
+    line-height: 1.3;
+  }
+
+  .dicas-muscle h2 {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .dicas-muscle label {
+    font-size: 0.9rem;
+    display: block;
+    margin: 15px 0;
+  }
+
+  #muscle,
+  #load {
+    width: 150px;
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 2rem 0;
+  }
+
+  .gif {
+    padding: 15px;
+  }
+
+  .gif img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .secao-imc {
+    padding: 30px 15px;
+    width: 100%;
+  }
+
+  .secao-imc h1 {
+    font-size: 1rem;
+    width: 100%;
+    padding-bottom: 25px;
+    line-height: 1.4;
+  }
+
   .container-imc {
-    width: 90%;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+    height: 35px;
   }
 
   .input {
+    width: 100%;
+    max-width: 100%;
     flex-direction: column;
+    align-items: flex-start;
     height: auto;
-    gap: 10px;
+    gap: 8px;
+  }
+
+  .input label {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .input input {
+    width: 100%;
+    font-size: 1rem;
+    height: 45px;
+  }
+
+  .secao-imc button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    height: 45px;
+  }
+
+  .result {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 15px;
+    min-height: 120px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .img-footer {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .faq p {
+    font-size: 1.3rem;
+  }
+
+  .geral-list {
+    padding: 0;
+  }
+
+  .geral-list p {
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+  }
+
+  .post-summary {
+    white-space: normal;
+  }
+
+  .linha-h {
+    width: 100%;
+    left: 0;
+  }
+
+  .img-footer-pessoal {
+    width: 100%;
+    max-width: 100%;
+    margin: 1.5rem auto 0;
+  }
+
+  .credenciais p {
+    font-size: 0.8rem;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  /* Botões fixos */
+  .button-fixed {
+    width: 40px;
+    height: 40px;
+  }
+
+  #BackUpButton {
+    bottom: 80px;
+    left: 15px;
+  }
+
+  #btnWhats {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  #btnWhats i {
+    font-size: 18px;
+  }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+
+  /* Header */
+  .header-topo {
+    padding: 0.5rem;
+    min-height: 70px;
+  }
+
+  .logo-topo img {
+    width: 150px;
+    margin: 8px 0;
+  }
+
+  .hamburger-menu {
+    width: 25px;
+    height: 25px;
+  }
+
+  .menu-lateral {
+    width: 280px;
+    max-width: 85%;
+    padding-top: 70px;
+  }
+
+  .menu-lateral-link {
+    padding: 18px 25px;
+    font-size: 1rem;
+  }
+
+  .menu-navegação ul li a {
+    font-size: 0.75rem;
+    padding: 5px 8px;
+  }
+
+  .card {
+    width: 140px;
+    height: 35px;
+  }
+
+  .card svg {
+    height: 18px;
+  }
+
+  /* Seção 1 */
+
+  #img-secao {
+    padding: 2rem 1rem;
+  }
+
+  .txt-topo h1 {
+    font-size: 1.3rem;
+  }
+
+  .txt-topo h2 {
+    font-size: 0.95rem;
+  }
+
+  .txt-topo p {
+    font-size: 0.85rem;
+  }
+
+  .img-pessoal img {
+    width: 200px;
+  }
+
+  .animated-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 290px;
+    padding: 12px 24px;
+    font-size: 13px;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 25px 15px;
+  }
+
+  .modal h1 {
+    font-size: 1.3rem;
+  }
+
+  .formulario input,
+  .formulario textarea {
+    width: 95%;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  /* Seção Benefícios */
+  .secao-2 {
+    margin: 1.5rem 0rem 2rem;
+    padding: 0 0.25rem;
+  }
+
+  .txt-beneficios {
+    padding: 0 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .txt-beneficios h1 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .txt-beneficios p {
+    font-size: 0.95rem;
+    margin-top: 0.3rem;
+  }
+
+  .pilares {
+    padding: 0.5rem 0;
+    overflow: visible;
+  }
+
+  .circle-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    transform: none;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .central-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    margin-bottom: 15px;
+  }
+
+  .central-circle::after {
+    width: 160px;
+    height: 160px;
+  }
+
+  .central-circle img {
+    max-width: 150px;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .pillar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .pillar1,
+  .pillar2,
+  .pillar3,
+  .pillar4 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+  }
+
+  .txt-pilha1,
+  .txt-pilha2,
+  .txt-pilha3,
+  .txt-pilha4 {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    text-align: center !important;
+    margin-bottom: 15px;
+  }
+
+  .txt-pilha1 h1,
+  .txt-pilha2 h1,
+  .txt-pilha3 h1,
+  .txt-pilha4 h1 {
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .txt-pilha1 p,
+  .txt-pilha2 p,
+  .txt-pilha3 p,
+  .txt-pilha4 p {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+
+  .circle-container h1 {
+    font-size: 0.9rem;
+  }
+
+  /* Seção Consultoria */
+  .secao-3 h1 {
+    font-size: 1.7rem;
+    padding-top: 30px;
+  }
+
+  .secao-3 h2 {
+    font-size: 1rem;
+  }
+
+  .container-consul .box div h3 {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .container-consul .box div p {
+    font-size: 0.85rem;
+  }
+
+  /* Seção 4 */
+  .secao-4 h1 {
+    font-size: 1.5rem;
+  }
+
+  .secao-4 h2 {
+    font-size: 1.2rem;
+  }
+
+  .m2 .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  .card-content h2,
+  .card-content-2 h2 {
+    font-size: 1.1rem;
+  }
+
+  .card-content ul li,
+  .card-content-2 ul li {
+    font-size: 0.8rem;
+    padding: 6px 8px;
+  }
+
+  /* Dicas */
+  .dicas-muscle h1 {
+    font-size: 1.2rem;
+  }
+
+  .dicas-muscle h2 {
+    font-size: 0.9rem;
+  }
+
+  #muscle,
+  #load {
+    width: 120px;
+    padding: 6px;
+    font-size: 0.85rem;
+  }
+
+  .secao-imc h1 {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .input label {
+    font-size: 0.9rem;
+  }
+
+  .input input {
+    font-size: 0.9rem;
+    height: 40px;
+  }
+
+  .secao-imc button {
+    font-size: 0.9rem;
+    height: 40px;
+  }
+
+  .result {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  /* Footer */
+  .footer {
+    display: flex;
+    align-items: center;
+  }
+
+  .img-footer {
+    max-width: 200px;
+  }
+
+  .faq p {
+    font-size: 1.5rem;
+  }
+
+  .geral-list p {
+    font-size: 0.85rem;
+  }
+
+  .credenciais p {
+    font-size: 0.75rem;
+  }
+
+  /* Botões fixos */
+  .button-fixed {
+    width: 35px;
+    height: 35px;
+  }
+
+  #BackUpButton {
+    bottom: 5px;
+    left: 5px;
+  }
+
+  #btnWhats {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  #btnWhats i {
+    font-size: 16px;
   }
 }
