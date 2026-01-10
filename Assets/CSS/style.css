@@ -447,7 +447,7 @@ body {
   align-items: center;
   width: 100%;
   height: 100dvh;
-  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url(img-web/foto\ pessoal.png);
+  background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0)), url('/Assets/img-web/foto-pessoal.png');
   background-size: cover;
 }
 
@@ -1821,6 +1821,7 @@ option {
 /** CSS RESPONSIVO */
 /* Telas grandes (desktops) - ajustes finos */
 @media (max-width: 1440px) {
+
   .container-consul .box {
     width: 100%;
     height: auto;
@@ -1837,6 +1838,7 @@ option {
 }
 
 /** Tablets e Desktops menores */
+/* Aplica SOMENTE entre 769px e 1024px */
 @media (max-width: 1024px) {
 
   /* Header */
@@ -1882,19 +1884,20 @@ option {
   #img-secao {
     flex-direction: column;
     height: auto;
-    min-height: 100vh;
+    min-height: 120vh;
     padding: 4rem 1rem;
     text-align: center;
-    background-position: center;
+    background-position: 90%;
   }
 
   .txt-topo {
     width: 90%;
-    margin-bottom: 2rem;
+    margin-top: 35rem;
   }
 
   .txt-topo h1 {
     font-size: 2.2rem;
+
   }
 
   .txt-topo h2 {
@@ -1916,9 +1919,34 @@ option {
     font-size: 14px;
   }
 
+  /*Alinhamneto em tablets*/
+  @media (min-width: 769px) and (max-width: 1024px) {
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+
+    }
+
+    .animated-button {
+      background-color: rgb(4, 128, 0);
+      /* Só fica roxo aqui */
+      font-size: 18px;
+      /* Fonte grande só aqui */
+    }
+
+  }
+
   /* Seção Benefícios */
-  .secao-2 {
-    margin: 5rem 0rem 15rem;
+  .secao-2 {}
+
+  .container-Beneficios {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .txt-beneficios {
+    padding: 10rem 0;
   }
 
   .txt-beneficios h1 {
@@ -1929,316 +1957,390 @@ option {
     font-size: 1.5rem;
   }
 
-  .pilares {
-    padding: 4rem 2rem;
+  .container-Beneficios {
+    padding: 5rem 5rem;
   }
 
   .circle-container {
-    width: 600px;
-    height: 600px;
-    margin: 0 auto;
-    transform: scale(0.75);
+    width: 180px;
+    height: 310px;
   }
 
   .central-circle {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
+  }
+  .central-circle img{
+    width: 230px;
   }
 
   .central-circle::after {
-    width: 320px;
-    height: 320px;
+    content: '';
+    width: 250px;
+    height: 250px;
+
   }
 
-  .central-circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .pillar {
-    width: 55px;
-    height: 55px;
-    font-size: 1rem;
-  }
-
+  /* Posicionamento circular **/
   .txt-pilha1,
   .txt-pilha2,
   .txt-pilha3,
   .txt-pilha4 {
-    width: 280px;
-    font-size: 0.95rem;
+    width: 220px;
+    font-weight: 550;
+
   }
 
-  .txt-pilha1 h1,
-  .txt-pilha2 h1,
-  .txt-pilha3 h1,
-  .txt-pilha4 h1 {
-    font-size: 1.3rem;
+  .pillar1 {
+    top: 0;
+    left: 50%;
+    transform: translate(-40%, 20%);
   }
 
+  .txt-pilha1 {
+    top: 0;
+    left: 50%;
+    transform: translate(20%, -50%);
+  }
+
+  .pillar2 {
+    top: 90%;
+    right: -55%;
+    transform: translate(70%, -90%);
+  }
+
+  .txt-pilha2 {
+    top: 100%;
+    right: -100%;
+    transform: translate(70%, -50%);
+  }
+
+  .pillar3 {
+    bottom: -80%;
+    left: 55%;
+    transform: translate(-50%, -100%);
+  }
+
+  .txt-pilha3 {
+    bottom: -100%;
+    left: -70%;
+    transform: translate(-100%, -100%);
+  }
+
+  .pillar4 {
+    top: 90%;
+    left: -52%;
+    transform: translate(-80%, -80%);
+  }
+
+  .txt-pilha4 {
+    bottom: -40%;
+    left: -55%;
+    transform: translate(-10%, 100%);
+    transition: all 1s ease;
+  }
+
+  /* --- REGRA GERAL PARA TODAS AS LINHAS --- */
   .linha-bene1,
   .linha-bene2,
   .linha-bene3,
   .linha-bene4 {
-    display: none;
+    /* Engrossa a borda para compensar a redução de tamanho */
+    border-width: 3px;
   }
 
-  /* Seção Consultoria */
-  .secao-3 {
-    margin-top: 15%;
+  /* --- LINHA 1 (Superior Direita) --- */
+  .linha-bene1 {
+    /* Adicionei scale(0.65) ao final do transform original */
+    transform: translateX(-50%) rotate(45deg) scale(0.65);
+
+    /* Ajustes de posição para reaproximar do centro após encolher */
+    top: 50%;
+    left: 10%;
   }
 
-  .secao-3 h1 {
-    font-size: 2.5rem;
-    padding-top: 60px;
+  /* --- LINHA 2 (Superior Esquerda) --- */
+  .linha-bene2 {
+    transform: translateX(-50%) rotate(130deg) scale(0.65);
+
+    top: -20%;
+    left: -60%;
+    /* Traz mais para perto do centro */
   }
 
-  .secao-3 h2 {
-    font-size: 1.3rem;
+  /* --- LINHA 3 (Inferior Esquerda) --- */
+  .linha-bene3 {
+    transform: translateX(1%) rotate(317deg) scale(0.65);
+
+    top: -20%;
+    left: 52%;
+    /* Ajuste fino */
   }
 
-  .container-consul {
-    padding: 40px 20px;
-  }
+  /* --- LINHA 4 (Inferior Direita) --- */
+  .linha-bene4 {
+    transform: translateX(-50%) rotate(225deg) scale(0.6);
 
-  .box-consultoria {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    bottom: 65%;
+    left: 65%;
   }
+}
 
-  .box-consultoria img {
-    width: 90%;
-    max-width: 500px;
-    height: auto;
-  }
+/* Seção Consultoria */
+.secao-3 {
+  margin: 0;
+  padding-top: 0rem;
+}
 
-  .container-consul .box {
-    width: 95%;
-    height: auto;
-    padding: 1.5rem;
-  }
+.secao-3 h1 {
+  font-size: 2.5rem;
+  padding-top: 60px;
+}
 
-  .container-consul .box div h3 {
-    font-size: 2rem;
-    line-height: 2.5rem;
-    margin-left: 0;
-    text-align: center;
-  }
+.secao-3 h2 {
+  font-size: 1.3rem;
+}
 
-  .container-consul .box div p {
-    font-size: 0.95rem;
-    text-align: center;
-  }
+.container-consul {
+  padding: 40px 20px;
+}
 
-  .linha1,
-  .linha2,
-  .linha3,
-  .linha4 {
-    display: none;
-  }
+.box-consultoria {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
-  /* Prós e Contras */
-  .secao-4 {
-    padding: 15rem 1rem 0;
-  }
+.box-consultoria img {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+}
 
-  .secao-4 h1 {
-    font-size: 2rem;
-  }
+.container-consul .box {
+  width: 95%;
+  height: auto;
+  padding: 1.5rem;
+}
 
-  .secao-4 h2 {
-    font-size: 1.5rem;
-  }
+.container-consul .box div h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-left: 0;
+  text-align: center;
+}
 
-  .content-complete {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 30px;
-    padding: 0 1rem;
-  }
+.container-consul .box div p {
+  font-size: 0.95rem;
+  text-align: center;
+}
 
-  .linha {
-    display: none;
-  }
+.linha1,
+.linha2,
+.linha3,
+.linha4 {
+  display: none;
+}
 
-  .card-list,
-  .card-list-2 {
-    width: 100%;
-    max-width: 400px;
-    margin: 0;
-  }
+/* Prós e Contras */
+.secao-4 {
+  padding: 15rem 1rem 0;
+}
 
-  .card-content ul li,
-  .card-content-2 ul li {
-    font-size: 0.9rem;
-    padding: 6px 15px;
-  }
+.secao-4 h1 {
+  font-size: 2rem;
+}
 
-  .card-list svg,
-  .card-list-2 svg {
-    max-width: 25px;
-  }
+.secao-4 h2 {
+  font-size: 1.5rem;
+}
 
-  /* Dicas */
-  .secao-5 {
-    padding: 60px 20px;
-    flex-direction: column;
-  }
+.content-complete {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 30px;
+  padding: 0 1rem;
+}
 
-  .dicas-muscle h1 {
-    font-size: 1.7rem;
-    padding-top: 40px;
-  }
+.linha {
+  display: none;
+}
 
-  .dicas-muscle h2 {
-    font-size: 1.2rem;
-    padding: 15px;
-  }
+.card-list,
+.card-list-2 {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+}
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    padding: 2rem 1rem;
-    gap: 12px;
-  }
+.card-content ul li,
+.card-content-2 ul li {
+  font-size: 0.9rem;
+  padding: 6px 15px;
+}
 
-  .gif img {
-    width: 150px;
-    height: 150px;
-  }
+.card-list svg,
+.card-list-2 svg {
+  max-width: 25px;
+}
 
-  .secao-imc {
-    padding: 40px 20px;
-  }
+/* Dicas */
+.secao-5 {
+  padding: 60px 20px;
+  flex-direction: column;
+}
 
-  .secao-imc h1 {
-    font-size: 1.1rem;
-    width: 90%;
-    padding-bottom: 30px;
-  }
+.dicas-muscle h1 {
+  font-size: 1.7rem;
+  padding-top: 40px;
+}
 
-  .container-imc {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    padding: 20px;
-  }
+.dicas-muscle h2 {
+  font-size: 1.2rem;
+  padding: 15px;
+}
 
-  .title {
-    font-size: 1.5rem;
-    height: 40px;
-  }
+.grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 2rem 1rem;
+  gap: 12px;
+}
 
-  .input {
-    width: 100%;
-    max-width: 300px;
-  }
+.gif img {
+  width: 150px;
+  height: 150px;
+}
 
-  .input label {
-    font-size: 1.2rem;
-  }
+.secao-imc {
+  padding: 40px 20px;
+}
 
-  .input input {
-    width: 100%;
-    font-size: 1.2rem;
-  }
+.secao-imc h1 {
+  font-size: 1.1rem;
+  width: 90%;
+  padding-bottom: 30px;
+}
 
-  .secao-imc button {
-    width: 100%;
-    max-width: 300px;
-    font-size: 1rem;
-  }
+.container-imc {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  padding: 20px;
+}
 
-  .result {
-    width: 100%;
-    max-width: 300px;
-    font-size: 1.2rem;
-    padding: 15px;
-  }
+.title {
+  font-size: 1.5rem;
+  height: 40px;
+}
 
-  /* Footer */
-  .footer {
-    flex-direction: column;
-    height: auto;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
+.input {
+  width: 100%;
+  max-width: 300px;
+}
 
-  .img-footer {
-    margin: 0 0 2rem 0;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
+.input label {
+  font-size: 1.2rem;
+}
 
-  .faq {
-    margin-bottom: 2rem;
-  }
+.input input {
+  width: 100%;
+  font-size: 1.2rem;
+}
 
-  .faq p {
-    font-size: 1.5rem;
-  }
+.secao-imc button {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+}
 
-  .geral-list {
-    width: 100%;
-    padding: 0 1rem;
-  }
+.result {
+  width: 100%;
+  max-width: 300px;
+  font-size: 1.2rem;
+  padding: 15px;
+}
 
-  .geral-list p {
-    justify-content: center;
-    font-size: 1rem;
-  }
+/* Footer */
+.footer {
+  flex-direction: column;
+  height: auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
 
-  .read-more,
-  .read-more-2,
-  .read-more-3,
-  .read-more-4 {
-    margin-left: 0;
-    position: static;
-    margin-top: 10px;
-    padding: 8px 20px;
-  }
+.img-footer {
+  margin: 0 0 2rem 0;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
 
-  .linha-h {
-    width: 90%;
-    left: 5%;
-  }
+.faq {
+  margin-bottom: 2rem;
+}
 
-  .img-footer-pessoal {
-    margin: 2rem auto 0;
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-  }
+.faq p {
+  font-size: 1.5rem;
+}
 
-  .credenciais {
-    padding: 15px 0;
-  }
+.geral-list {
+  width: 100%;
+  padding: 0 1rem;
+}
 
-  .credenciais p {
-    font-size: 0.9rem;
-  }
+.geral-list p {
+  justify-content: center;
+  font-size: 1rem;
+}
 
-  /* Botões fixos */
-  .button-fixed {
-    width: 45px;
-    height: 45px;
-  }
+.read-more,
+.read-more-2,
+.read-more-3,
+.read-more-4 {
+  margin-left: 0;
+  position: static;
+  margin-top: 10px;
+  padding: 8px 20px;
+}
 
-  #BackUpButton {
-    bottom: 15px;
-    left: 15px;
-  }
+.linha-h {
+  width: 90%;
+  left: 5%;
+}
 
-  #btnWhats {
-    bottom: 15px;
-    right: 15px;
-  }
+.img-footer-pessoal {
+  margin: 2rem auto 0;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+}
 
-  #btnWhats i {
-    font-size: 20px;
-  }
+.credenciais {
+  padding: 15px 0;
+}
+
+.credenciais p {
+  font-size: 0.9rem;
+}
+
+/* Botões fixos */
+.button-fixed {
+  width: 45px;
+  height: 45px;
+}
+
+#BackUpButton {
+  bottom: 15px;
+  left: 15px;
+}
+
+#btnWhats {
+  bottom: 15px;
+  right: 15px;
+}
+
+#btnWhats i {
+  font-size: 20px;
 }
 
 /* Smartphones */
@@ -2247,7 +2349,7 @@ option {
   /* Header */
   .header-topo {
     flex-direction: row;
-    gap: 99px; 
+    gap: 99px;
   }
 
   .logo-topo {
@@ -2332,7 +2434,7 @@ option {
   #img-secao {
     padding: 3rem 1rem;
     min-height: auto;
-    background-position: right;
+    background-position: 90%;
 
   }
 
@@ -2373,7 +2475,6 @@ option {
     display: flex;
     width: 100%;
     max-width: 280px;
-    padding: 12px 24px;
     font-size: 13px;
     justify-content: center;
   }
@@ -2872,7 +2973,7 @@ option {
   /* Seção 1 */
 
   #img-secao {
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
   }
 
   .txt-topo h1 {
@@ -2896,8 +2997,11 @@ option {
     align-items: center;
     width: 100%;
     max-width: 290px;
-    padding: 12px 24px;
     font-size: 13px;
+  }
+
+  .animated-button svg {
+    margin-left: 25px;
   }
 
   /* Modal */
