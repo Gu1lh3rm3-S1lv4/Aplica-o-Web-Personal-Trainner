@@ -453,8 +453,10 @@ body {
 
 .txt-topo {
   position: relative;
-  margin: 0;
-  width: 700px;
+  width: 100%;
+  /* Ocupa o espaço disponível */
+  max-width: 700px;
+  /* Mas não passa de 700px em telas grandes */
 }
 
 .txt-topo h1 {
@@ -780,7 +782,6 @@ textarea {
 .central-circle {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, var());
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1646,8 +1647,11 @@ option {
 
 }
 
-.faq p {
+div .faq p {
+  left: 0;
+  transform: translateX(25%);
   color: var(--color-esmerald);
+  padding: 0 0 50px;
   font-size: 2rem;
   font-weight: 600;
 }
@@ -1820,7 +1824,18 @@ option {
 
 /** CSS RESPONSIVO */
 /* Telas grandes (desktops) - ajustes finos */
-@media (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+  .secao-1 h1 {
+    font-size: 1.7rem;
+  }
+
+  .txt-pilha1,
+  .txt-pilha2,
+  .txt-pilha3,
+  .txt-pilha4 {
+    width: 95%;
+  }
 
   .container-consul .box {
     width: 100%;
@@ -1834,6 +1849,46 @@ option {
   .box-consultoria img {
     width: 400px;
     height: auto;
+  }
+
+  /*S-4*/
+  .card-list ul li,
+  .card-list-2 ul li {
+    font-size: 15px;
+  }
+
+  .m2 {
+    max-width: 100%;
+  }
+
+  .img-footer img {
+    width: 100%;
+    /* Ocupa a largura disponível */
+    height: 60%;
+    /* Ocupa 60% da altura do pai */
+    object-fit: cover;
+    /* MÁGICA: Corta o excesso para manter a proporção correta, sem esticar */
+    margin-left: -10%;
+    display: block;
+    /* Remove espaços brancos extras abaixo da imagem */
+  }
+
+  div .faq p {
+    transform: translateX(25%);
+    color: var(--color-esmerald);
+    padding-bottom: 50px;
+    font-size: 2rem;
+    font-weight: 550;
+  }
+
+  .img-footer-pessoal img {
+    width: 90%;
+    height: 60%;
+    margin-left: 90px;
+  }
+
+  .geral-list p {
+    font-size: 15px;
   }
 }
 
@@ -1878,6 +1933,19 @@ option {
   .card {
     width: 180px;
     height: 45px;
+    background-color: var(--color-destaque1);
+  }
+
+  .card span {
+    display: none;
+  }
+
+  .card::after {
+    background-color: transparent;
+  }
+
+  .card::before {
+    background-color: transparent;
   }
 
   /* Seção 1 */
@@ -1919,34 +1987,14 @@ option {
     font-size: 14px;
   }
 
-  /*Alinhamneto em tablets*/
-  @media (min-width: 769px) and (max-width: 1024px) {
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-
-    }
-
-    .animated-button {
-      background-color: rgb(4, 128, 0);
-      /* Só fica roxo aqui */
-      font-size: 18px;
-      /* Fonte grande só aqui */
-    }
-
-  }
-
   /* Seção Benefícios */
-  .secao-2 {}
-
   .container-Beneficios {
     flex-direction: column;
     align-items: center;
   }
 
   .txt-beneficios {
-    padding: 10rem 0;
+    padding: 5rem 0 0;
   }
 
   .txt-beneficios h1 {
@@ -1954,6 +2002,7 @@ option {
   }
 
   .txt-beneficios p {
+    padding: 0 0 5rem;
     font-size: 1.5rem;
   }
 
@@ -1970,7 +2019,8 @@ option {
     width: 300px;
     height: 300px;
   }
-  .central-circle img{
+
+  .central-circle img {
     width: 230px;
   }
 
@@ -1986,13 +2036,13 @@ option {
   .txt-pilha2,
   .txt-pilha3,
   .txt-pilha4 {
-    width: 220px;
+    width: 200px;
     font-weight: 550;
-
+    font-size: 13px;
   }
 
   .pillar1 {
-    top: 0;
+    top: 5%;
     left: 50%;
     transform: translate(-40%, 20%);
   }
@@ -2005,31 +2055,31 @@ option {
 
   .pillar2 {
     top: 90%;
-    right: -55%;
+    right: -50%;
     transform: translate(70%, -90%);
   }
 
   .txt-pilha2 {
-    top: 100%;
+    top: 95%;
     right: -100%;
     transform: translate(70%, -50%);
   }
 
   .pillar3 {
-    bottom: -80%;
+    bottom: -79%;
     left: 55%;
     transform: translate(-50%, -100%);
   }
 
   .txt-pilha3 {
-    bottom: -100%;
+    bottom: -55%;
     left: -70%;
     transform: translate(-100%, -100%);
   }
 
   .pillar4 {
     top: 90%;
-    left: -52%;
+    left: -48%;
     transform: translate(-80%, -80%);
   }
 
@@ -2052,295 +2102,298 @@ option {
   /* --- LINHA 1 (Superior Direita) --- */
   .linha-bene1 {
     /* Adicionei scale(0.65) ao final do transform original */
-    transform: translateX(-50%) rotate(45deg) scale(0.65);
+    transform: translateX(-50%) rotate(45deg) scale(0.6);
 
     /* Ajustes de posição para reaproximar do centro após encolher */
     top: 50%;
-    left: 10%;
+    left: 15%;
   }
 
-  /* --- LINHA 2 (Superior Esquerda) --- */
+  /* --- LINHA 2 (infeior direito) --- */
   .linha-bene2 {
-    transform: translateX(-50%) rotate(130deg) scale(0.65);
+    transform: translateX(-50%) rotate(130deg) scale(0.6);
 
     top: -20%;
-    left: -60%;
+    left: -70%;
     /* Traz mais para perto do centro */
   }
 
-  /* --- LINHA 3 (Inferior Esquerda) --- */
+  /* --- LINHA 3 (superior Esquerda) --- */
   .linha-bene3 {
-    transform: translateX(1%) rotate(317deg) scale(0.65);
+    transform: translateX(1%) rotate(316deg) scale(0.6);
 
-    top: -20%;
-    left: 52%;
+    top: -25%;
+    left: 48%;
     /* Ajuste fino */
   }
 
-  /* --- LINHA 4 (Inferior Direita) --- */
+  /* --- LINHA 4 (Inferior esquerda) --- */
   .linha-bene4 {
     transform: translateX(-50%) rotate(225deg) scale(0.6);
 
-    bottom: 65%;
-    left: 65%;
+    bottom: 60%;
+    left: 75%;
   }
-}
 
-/* Seção Consultoria */
-.secao-3 {
-  margin: 0;
-  padding-top: 0rem;
-}
+  /* Seção Consultoria */
+  .secao-3 {
+    padding: 0 0 10rem;
+  }
 
-.secao-3 h1 {
-  font-size: 2.5rem;
-  padding-top: 60px;
-}
+  .secao-3 h1 {
+    font-size: 2.5rem;
+  }
 
-.secao-3 h2 {
-  font-size: 1.3rem;
-}
+  .secao-3 h2 {
+    font-size: 1.3rem;
+  }
 
-.container-consul {
-  padding: 40px 20px;
-}
+  .container-consul {
+    padding: 40px 20px;
+  }
 
-.box-consultoria {
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
+  .box-consultoria {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 
-.box-consultoria img {
-  width: 90%;
-  max-width: 500px;
-  height: auto;
-}
+  .box-consultoria img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+  }
 
-.container-consul .box {
-  width: 95%;
-  height: auto;
-  padding: 1.5rem;
-}
+  .container-consul .box {
+    width: 95%;
+    height: auto;
+    padding: 1.5rem;
+  }
 
-.container-consul .box div h3 {
-  font-size: 2rem;
-  line-height: 2.5rem;
-  margin-left: 0;
-  text-align: center;
-}
+  .container-consul .box div h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-left: 0;
+    text-align: center;
+  }
 
-.container-consul .box div p {
-  font-size: 0.95rem;
-  text-align: center;
-}
+  .container-consul .box div p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
 
-.linha1,
-.linha2,
-.linha3,
-.linha4 {
-  display: none;
-}
+  .linha1,
+  .linha2,
+  .linha3,
+  .linha4 {
+    display: none;
+  }
 
-/* Prós e Contras */
-.secao-4 {
-  padding: 15rem 1rem 0;
-}
+  /* Prós e Contras */
+  .secao-4 {
+    margin-top: -300px;
+  }
 
-.secao-4 h1 {
-  font-size: 2rem;
-}
+  .secao-4 h1 {
+    font-size: 2rem;
+  }
 
-.secao-4 h2 {
-  font-size: 1.5rem;
-}
+  .secao-4 h2 {
+    font-size: 1.5rem;
+  }
 
-.content-complete {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: 30px;
-  padding: 0 1rem;
-}
+  .content-complete {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px;
+  }
 
-.linha {
-  display: none;
-}
+  .m2 {
+    max-width: 60%;
+    width: 100%;
+  }
 
-.card-list,
-.card-list-2 {
-  width: 100%;
-  max-width: 400px;
-  margin: 0;
-}
+  .linha {
+    display: none;
+  }
 
-.card-content ul li,
-.card-content-2 ul li {
-  font-size: 0.9rem;
-  padding: 6px 15px;
-}
+  .card-list,
+  .card-list-2 {
+    width: 100%;
+    max-width: 400px;
+    margin: 0;
+  }
 
-.card-list svg,
-.card-list-2 svg {
-  max-width: 25px;
-}
+  .card-content ul li,
+  .card-content-2 ul li {
+    font-size: 0.9rem;
+    padding: 6px 15px;
+  }
 
-/* Dicas */
-.secao-5 {
-  padding: 60px 20px;
-  flex-direction: column;
-}
+  .card-list svg,
+  .card-list-2 svg {
+    max-width: 25px;
+  }
 
-.dicas-muscle h1 {
-  font-size: 1.7rem;
-  padding-top: 40px;
-}
+  /* Dicas */
+  .secao-5 {
+    flex-direction: column;
+  }
 
-.dicas-muscle h2 {
-  font-size: 1.2rem;
-  padding: 15px;
-}
+  .dicas-muscle h1 {
+    font-size: 1.7rem;
+  }
 
-.grid {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding: 2rem 1rem;
-  gap: 12px;
-}
+  .dicas-muscle h2 {
+    font-size: 1.2rem;
+    padding: 15px;
+  }
 
-.gif img {
-  width: 150px;
-  height: 150px;
-}
+  .grid {
+    padding: 5rem 1rem;
+    gap: 12px;
+    display: flex;
 
-.secao-imc {
-  padding: 40px 20px;
-}
+  }
 
-.secao-imc h1 {
-  font-size: 1.1rem;
-  width: 90%;
-  padding-bottom: 30px;
-}
+  .gif img {
+    width: 150px;
+    height: 150px;
+  }
 
-.container-imc {
-  width: 90%;
-  max-width: 400px;
-  height: auto;
-  padding: 20px;
-}
+  .secao-imc {
+    padding: 40px 20px;
+  }
 
-.title {
-  font-size: 1.5rem;
-  height: 40px;
-}
+  .secao-imc h1 {
+    font-size: 1.1rem;
+    width: 90%;
+    padding-bottom: 30px;
+  }
 
-.input {
-  width: 100%;
-  max-width: 300px;
-}
+  .container-imc {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    padding: 20px;
+  }
 
-.input label {
-  font-size: 1.2rem;
-}
+  .title {
+    font-size: 1.5rem;
+    height: 40px;
+  }
 
-.input input {
-  width: 100%;
-  font-size: 1.2rem;
-}
+  .input {
+    width: 100%;
+    max-width: 300px;
+  }
 
-.secao-imc button {
-  width: 100%;
-  max-width: 300px;
-  font-size: 1rem;
-}
+  .input label {
+    font-size: 1.2rem;
+  }
 
-.result {
-  width: 100%;
-  max-width: 300px;
-  font-size: 1.2rem;
-  padding: 15px;
-}
+  .input input {
+    width: 100%;
+    font-size: 1.2rem;
+  }
 
-/* Footer */
-.footer {
-  flex-direction: column;
-  height: auto;
-  padding: 2rem 1rem;
-  text-align: center;
-}
+  .secao-imc button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1rem;
+  }
 
-.img-footer {
-  margin: 0 0 2rem 0;
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-}
+  .result {
+    width: 100%;
+    max-width: 300px;
+    font-size: 1.2rem;
+    padding: 15px;
+  }
 
-.faq {
-  margin-bottom: 2rem;
-}
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
 
-.faq p {
-  font-size: 1.5rem;
-}
+  .img-footer {
+    margin: 0 0 2rem 0;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
 
-.geral-list {
-  width: 100%;
-  padding: 0 1rem;
-}
+  .faq {
+    margin-bottom: 2rem;
+  }
 
-.geral-list p {
-  justify-content: center;
-  font-size: 1rem;
-}
+  div .faq p {
+    font-size: 2rem;
+    left: 0;
+    transform: translateX(0);
+  }
 
-.read-more,
-.read-more-2,
-.read-more-3,
-.read-more-4 {
-  margin-left: 0;
-  position: static;
-  margin-top: 10px;
-  padding: 8px 20px;
-}
+  .geral-list {
+    width: 100%;
+    padding: 0 1rem;
+  }
 
-.linha-h {
-  width: 90%;
-  left: 5%;
-}
+  .geral-list p {
+    justify-content: center;
+    font-size: 1rem;
+  }
 
-.img-footer-pessoal {
-  margin: 2rem auto 0;
-  width: 90%;
-  max-width: 400px;
-  height: auto;
-}
+  .read-more,
+  .read-more-2,
+  .read-more-3,
+  .read-more-4 {
+    margin-left: 0;
+    position: static;
+    margin-top: 10px;
+    padding: 8px 20px;
+  }
 
-.credenciais {
-  padding: 15px 0;
-}
+  .linha-h {
+    width: 90%;
+    left: 5%;
+  }
 
-.credenciais p {
-  font-size: 0.9rem;
-}
+  .img-footer-pessoal {
+    margin: 2rem auto 0;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+  }
 
-/* Botões fixos */
-.button-fixed {
-  width: 45px;
-  height: 45px;
-}
+  .credenciais {
+    padding: 15px 0;
+  }
 
-#BackUpButton {
-  bottom: 15px;
-  left: 15px;
-}
+  .credenciais p {
+    font-size: 0.9rem;
+  }
 
-#btnWhats {
-  bottom: 15px;
-  right: 15px;
-}
+  /* Botões fixos */
+  .button-fixed {
+    width: 45px;
+    height: 45px;
+  }
 
-#btnWhats i {
-  font-size: 20px;
+  #BackUpButton {
+    bottom: 15px;
+    left: 15px;
+  }
+
+  #btnWhats {
+    bottom: 15px;
+    right: 15px;
+  }
+
+  #btnWhats i {
+    font-size: 20px;
+  }
 }
 
 /* Smartphones */
@@ -2871,8 +2924,8 @@ option {
     max-width: 250px;
   }
 
-  .faq p {
-    font-size: 1.3rem;
+  div .faq p {
+    font-size: 1.4rem;
   }
 
   .geral-list {
@@ -3032,13 +3085,13 @@ option {
   }
 
   .txt-beneficios h1 {
-    font-size: 1.4rem;
+    font-size: 1.99rem;
     line-height: 1.2;
     margin-bottom: 0.3rem;
   }
 
   .txt-beneficios p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-top: 0.3rem;
   }
 
@@ -3063,8 +3116,8 @@ option {
 
   .central-circle {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     transform: none !important;
     top: auto !important;
     left: auto !important;
@@ -3072,8 +3125,8 @@ option {
   }
 
   .central-circle::after {
-    width: 160px;
-    height: 160px;
+    width: 200px;
+    height: 200px;
   }
 
   .central-circle img {
@@ -3159,6 +3212,10 @@ option {
   }
 
   /* Seção 4 */
+  .secao-4 {
+    padding-top: 20rem;
+  }
+
   .secao-4 h1 {
     font-size: 1.5rem;
   }
@@ -3183,6 +3240,10 @@ option {
   }
 
   /* Dicas */
+  .dicas-muscle {
+    margin-top: 100px;
+  }
+
   .dicas-muscle h1 {
     font-size: 1.2rem;
   }

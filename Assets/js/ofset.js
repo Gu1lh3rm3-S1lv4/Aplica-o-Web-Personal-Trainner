@@ -1,5 +1,9 @@
+let ismobile = window < 1024;
+
 AOS.init({
-    mobile: function(){
-        return window.matchMedia('(max-width: 1024px)').matches;
-    }
-})
+    disable: false,
+
+    offset: ismobile ? 50 : 250,
+
+    duration: ismobile ? 600 : 1000,
+});
