@@ -2465,8 +2465,21 @@ div .faq p {
 
   /* Menu Lateral ajustes para mobile */
   .menu-lateral {
+    position: absolute;
     width: 300px;
     max-width: 90%;
+    height: 100vh;
+    
+  }
+
+  .menu-lateral i {
+    font-size: 30px;
+    padding: 20px;
+    position: relative;
+    top: 40vh; 
+    left: 25%;
+    transform: translateX(-50%);
+
   }
 
   .card {
