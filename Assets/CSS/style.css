@@ -749,6 +749,7 @@ textarea {
   text-transform: uppercase;
   font-family: var(--font-pequena);
   font-weight: 600;
+  padding: 0 0 10rem 0;
 }
 
 .pilares {
@@ -1742,6 +1743,7 @@ div .faq p {
 .post-content.visible {
   max-height: 500px;
   /* Valor suficiente para o conteúdo */
+  transition: all .7s ease-in-out;
 }
 
 .img-footer-pessoal {
@@ -2465,18 +2467,17 @@ div .faq p {
 
   /* Menu Lateral ajustes para mobile */
   .menu-lateral {
-    position: absolute;
     width: 300px;
     max-width: 90%;
     height: 100vh;
-    
+
   }
 
   .menu-lateral i {
     font-size: 30px;
     padding: 20px;
     position: relative;
-    top: 40vh; 
+    top: 40vh;
     left: 25%;
     transform: translateX(-50%);
 
@@ -2715,7 +2716,7 @@ div .faq p {
 
   /* Seção Consultoria */
   .secao-3 {
-    margin-top: 10%;
+    scroll-margin-top: 100px;
   }
 
   .secao-3 h1 {
@@ -2761,7 +2762,6 @@ div .faq p {
 
   /* Seção 4 */
   .secao-4 {
-    padding: 10rem 1rem 0;
   }
 
   .secao-4 h1 {
