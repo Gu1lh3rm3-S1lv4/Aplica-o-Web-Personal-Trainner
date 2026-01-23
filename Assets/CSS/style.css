@@ -1743,7 +1743,7 @@ div .faq p {
 .post-content.visible {
   max-height: 500px;
   /* Valor suficiente para o conteúdo */
-  transition: all .7s ease-in-out;
+  transition: all .3s ease;
 }
 
 .img-footer-pessoal {
@@ -2478,7 +2478,7 @@ div .faq p {
     padding: 20px;
     position: relative;
     top: 40vh;
-    left: 25%;
+    left: 35%;
     transform: translateX(-50%);
 
   }
@@ -2715,10 +2715,6 @@ div .faq p {
   }
 
   /* Seção Consultoria */
-  .secao-3 {
-    scroll-margin-top: 100px;
-  }
-
   .secao-3 h1 {
     font-size: 2rem;
     padding-top: 40px;
@@ -2762,6 +2758,7 @@ div .faq p {
 
   /* Seção 4 */
   .secao-4 {
+    padding: 10rem 1rem 0;
   }
 
   .secao-4 h1 {
@@ -2968,12 +2965,12 @@ div .faq p {
 
   /* Botões fixos */
   .button-fixed {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   #BackUpButton {
-    bottom: 80px;
+    bottom: 15px;
     left: 15px;
   }
 
@@ -3318,12 +3315,12 @@ div .faq p {
 
   /* Botões fixos */
   .button-fixed {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
   }
 
   #BackUpButton {
-    bottom: 5px;
+    bottom: 10px;
     left: 5px;
   }
 
