@@ -47,6 +47,7 @@
 
 body {
   background-color: var(--color-black);
+  scroll-behavior: smooth;
 }
 
 /*background fundo*/
@@ -301,6 +302,7 @@ body {
   width: 200px;
   /* Largura fixa */
   border-radius: 20px;
+  gap: 35px;
 }
 
 /* Pseudo-elementos criam "metades coloridas" no card */
@@ -704,7 +706,7 @@ textarea {
 }
 
 .formulario textarea {
-
+max-width: auto;
   height: 100px;
 }
 
@@ -1743,7 +1745,8 @@ div .faq p {
 .post-content.visible {
   max-height: 500px;
   /* Valor suficiente para o conteúdo */
-  transition: all .3s ease;
+  transition: max-height 0. 4s ease-in-out;
+  
 }
 
 .img-footer-pessoal {
